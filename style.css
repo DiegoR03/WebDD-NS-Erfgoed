@@ -1,0 +1,100 @@
+:root {
+    --ns-yellow: #ffc917;
+    --ns-dark-blue: #003082;
+    --ns-button-green: #00aa89;
+}
+
+* {
+    margin: auto;
+    font-family: Roboto;
+    box-sizing: border-box;
+}
+
+/* Typografie */
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto.ttf);
+}
+
+h1,
+h2 {
+    text-align: center;
+    padding: 0.5em;
+}
+
+/* Body elements */
+body {
+    background-color: white;
+}
+
+#onderdeel1 {
+    background-color: var(--ns-yellow);
+    box-shadow: inset 0 1.5px 1.5px rgba(0, 0, 0, 0.3);
+    color: var(--ns-dark-blue);
+}
+
+/* Form elements */
+label {
+    display: block;
+    padding: 1em;
+    margin: 0.05em;
+    border-style: none;
+    border-width: 1px;
+    border-color: lightgray;
+    border-radius: 4px;
+    background-color: white;
+}
+
+input {
+    border-style: none;
+    border-width: 1px;
+    border-radius: 4px;
+    outline: none;
+}
+
+fieldset {
+    border-style: none;
+    margin-top: 1em;
+    display: inline;
+}
+
+legend {
+    color: var(--ns-dark-blue);
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* Form elements, ID specific */
+#onderdeel1 fieldset {
+    background-color: var(--ns-yellow);
+}
+
+#onderdeel2 label {
+    display: block;
+    padding: 1em;
+    margin: 0.1em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    border-radius: 4px;
+    background-color: white;
+}
+
+/* Form elements, specific types  */
+input[type="radio"] {
+    width: 1em;
+    height: 1em;
+    accent-color: var(--ns-button-green);
+}
+
+@media (min-width: 600px) {
+
+    h1,
+    h2 {
+        text-align: left;
+    }
+
+    label {
+        width: 40%;
+    }
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Dit is voor een schoolopdracht!!!!</h1>
+    <section id="onderdeel1">
+        <form>
+            <h2>De gegevens van de overledende</h2>
+            <fieldset>
+                <legend>Voornaam, tussenvoegsel en Achternaam</legend>
+                <label>
+                    <input required type="text" name="voorNaam" placeholder="Voornaam">
+                </label>
+                <label>
+                    <input type="text" name="tussenVoegsel" placeholder="Tussenvoegsel">
+                </label>
+                <label>
+                    <input required type="text" name="achterNaam" placeholder="Achternaam">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>BSN overledende</legend>
+                <label>
+                    <input required type="number" name="BSN" placeholder="0123456789">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Overlijdensdatum</legend>
+                <label>
+                    <input type="date">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van
+                    overlijden?</legend>
+                <label>
+                    <input type="radio" name="getrouwd" value="Nee">
+                    <span>Nee. Ga verder met vraag 1c</span>
+                </label>
+                <label>
+                    <input type="radio" name="getrouwd" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of
+                    partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
+                <label>
+                    <input type="radio" name="notariële" value="Nee">
+                    <span>Nee. Ga verder met vraag 1c</span>
+                </label>
+                <label>
+                    <input type="radio" name="notariële" value="ja">
+                    <span>Ja, Stuur een kopie van de akte mee met de aangifte.</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
+                <label>
+                    <input type="radio" name="verrekenbeding" value="Nee">
+                    <span>Nee</span>
+                </label>
+                <label>
+                    <input type="radio" name="verrekenbeding" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Had de overledene kinderen?</legend>
+                <label>
+                    <input type="radio" name="kinderen" value="Nee">
+                    <span>Nee, Ga verder met vraag 1d</span>
+                </label>
+                <label>
+                    <input type="radio" name="kinderen" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                </legend>
+                <label>
+                    <input type="radio" name="eerder" value="Nee">
+                    <span>Nee, Ga verder met vraag 1d</span>
+                </label>
+                <label>
+                    <input type="radio" name="eerder" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Had dit overleden kind zelf kinderen?</legend>
+                <label>
+                    <input type="radio" name="zelf" value="Nee">
+                    <span>Nee</span>
+                </label>
+                <label>
+                    <input type="radio" name="zelf" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Had de overledene een testament?</legend>
+                <label>
+                    <input type="radio" name="testament" value="Nee">
+                    <span>Nee</span>
+                </label>
+                <label>
+                    <input type="radio" name="testament" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Protocolnummer notaris</legend>
+                <label>
+                    <input type="number" name="notaris" placeholder="0123456789">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Voornaam, tussenvoegsel en Achternaam</legend>
+                <label>
+                    <input required type="text" name="voorNaamTestament" placeholder="Voornaam">
+                </label>
+                <label>
+                    <input type="text" name="tussenVoegselTestament" placeholder="Tussenvoegsel">
+                </label>
+                <label>
+                    <input required type="text" name="achterNaamTestament" placeholder="Achternaam">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Vestigingsplaats</legend>
+                <label>
+                    <input required type="text" name="vestiging" placeholder="Vestigingsplaats">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Datum van het testament of van de laatste wijziging</legend>
+                <label>
+                    <input type="date">
+                </label>
+            </fieldset>
+        </form>
+    </section>
+    <section id="onderdeel2">
+        <form>
+            <h2>Gegevens gemachtigde</h2>
+            <fieldset>
+                <legend>Vul 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.</legend>
+                <label>
+                    <input type="number" name="BSNGemachtigde" placeholder="Bsn/RSIN gemachtigde">
+                </label>
+                <label>
+                    <input type="number" name="BeconNummer" placeholder="Beconnummer adviseur">
+                </label>
+                <label>
+                    <input type="number" name="protoColnummer" placeholder="Protocolnummer notaris">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>BSN overledende</legend>
+                <label>
+                    <input required type="number" name="BSN" placeholder="0123456789">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Overlijdensdatum</legend>
+                <label>
+                    <input type="date">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van
+                    overlijden?</legend>
+                <label>
+                    <input type="radio" name="getrouwd" value="Nee">
+                    <span>Nee. Ga verder met vraag 1c</span>
+                </label>
+                <label>
+                    <input type="radio" name="getrouwd" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of
+                    partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
+                <label>
+                    <input type="radio" name="notariële" value="Nee">
+                    <span>Nee. Ga verder met vraag 1c</span>
+                </label>
+                <label>
+                    <input type="radio" name="notariële" value="ja">
+                    <span>Ja, Stuur een kopie van de akte mee met de aangifte.</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
+                <label>
+                    <input type="radio" name="verrekenbeding" value="Nee">
+                    <span>Nee</span>
+                </label>
+                <label>
+                    <input type="radio" name="verrekenbeding" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Had de overledene kinderen?</legend>
+                <label>
+                    <input type="radio" name="kinderen" value="Nee">
+                    <span>Nee, Ga verder met vraag 1d</span>
+                </label>
+                <label>
+                    <input type="radio" name="kinderen" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                </legend>
+                <label>
+                    <input type="radio" name="eerder" value="Nee">
+                    <span>Nee, Ga verder met vraag 1d</span>
+                </label>
+                <label>
+                    <input type="radio" name="eerder" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Had dit overleden kind zelf kinderen?</legend>
+                <label>
+                    <input type="radio" name="zelf" value="Nee">
+                    <span>Nee</span>
+                </label>
+                <label>
+                    <input type="radio" name="zelf" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Had de overledene een testament?</legend>
+                <label>
+                    <input type="radio" name="testament" value="Nee">
+                    <span>Nee</span>
+                </label>
+                <label>
+                    <input type="radio" name="testament" value="ja">
+                    <span>Ja</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Protocolnummer notaris</legend>
+                <label>
+                    <input type="number" name="notaris" placeholder="0123456789">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Voornaam, tussenvoegsel en Achternaam</legend>
+                <label>
+                    <input required type="text" name="voorNaamTestament" placeholder="Voornaam">
+                </label>
+                <label>
+                    <input type="text" name="tussenVoegselTestament" placeholder="Tussenvoegsel">
+                </label>
+                <label>
+                    <input required type="text" name="achterNaamTestament" placeholder="Achternaam">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Vestigingsplaats</legend>
+                <label>
+                    <input required type="text" name="vestiging" placeholder="Vestigingsplaats">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Datum van het testament of van de laatste wijziging</legend>
+                <label>
+                    <input type="date">
+                </label>
+            </fieldset>
+        </form>
+    </section>
+</body>
+
+</html>
