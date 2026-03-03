@@ -42,3 +42,21 @@ Vandaag heb ik verassend veel bereikt voor een eerste dag na de vakantie. Ik ben
 Morgen:
 Datum input stylen met CSS. Pagination wat verder uitwerken, en meer CSS stylen voor de input types (Bijvoorbeeld als er twee naast elkaar moeten worden geplaats, of kortere input types voor huisnummers). Ook wil ik werken aan de Land codes. Ook ga ik focussen om alle code te kunnen werken zonder Javascript, sommige onderdelen zijn heel erg afhankelijk van Javascript.
 
+## 03/03/2026
+- 09:30 Weekly Geek
+- 10:30 Verder werken aan de NS Erfgoed Website (Ook deze keer geen workshop)
+- 12:30 Pauze
+- 13:15 Verder gewerkt aan de website
+- 14:30 Jacco geholpen met Code
+- 16:00 Checkout
+
+Gesprek met:
+Vandaag heb ik heel veel gedaan. Ik heb bijna al mijn doelen van gisteren bereikt en heb zelfs meer kunnen doen. Ik begon vandaag met Javascript code omzetten naar CSS. Dit was niet heel makkelijk. Hoe één korte functie in javascript makkelijk te maken was, was het moeilijk om dit compact te houden voor CSS. Uiteindelijk heb ik dit met heel veel code moeten aanpakken.
+<img width="1199" height="653" alt="image" src="https://github.com/user-attachments/assets/255cb973-acff-42ee-92c8-42d0fa560b1c" />
+Daarna ben ik verder gegaan met de pagination. Op dit moment werd dit via javascript gedaan, maar ik wilde een failsafe maken voorals er geen javascript kon worden geladen. In de Javascript en CSS heb ik een systeem gemaakt waar bepaalde css alleen wordt geladen als er javascript aanwezig is, dit geldt ook voor de pagination. De pagination is alleen aanwezig als er javascript is, zo niet dan is het een one-pager.
+Daarna ben ik bezig geweest om de max-datum te houden op de huidige datum. Dit heb ik met een paar google searches moeten doen, maar uiteindelijk is het mij gelukt om te de huidige datum te krijgen.
+Verder heb ik mij heel erg gefocust op het netjes maekn van CSS elementen en HTML code op te ruimen waar nodig was.
+
+Volgende keer:
+Ik wil kijken of ik nog meer Javascript kan omzetten naar CSS. Hoewel dit ver gezocht is, wil ik het wel proberen. Ik wil mijn input types nog verder stylen zodat het nog duidelijker is wanneer is valid is en wanneer niet. Ook wil ik de land codes proberen. Ik heb veel gezocht op google maar kon geen antwoorden vinden, misschien moet ik het proberen met ChatGPT.
+
