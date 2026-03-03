@@ -6,6 +6,10 @@
     --ns-gray: #cfcfcf;
     --ns-button-green: #00aa89;
     --ns-background-gray: #e6e6e9;
+    --ns-border: #c3c3c3;
+    --text-color: #ffffff;
+    --required-not-filled: #ff0000;
+    --invalid-color: rgba(255, 0, 0, 0.397);
 }
 
 * {
@@ -13,50 +17,56 @@
     box-sizing: border-box;
 }
 
-/* Typografie */
+/* MARK: Typografie */
 @font-face {
     font-family: Roboto;
     src: url(fonts/Roboto.ttf);
 }
 
-h1,
 h2,
-p {
-    text-align: center;
+#pageIndex {
     padding: 0.5em;
 }
 
-h1 {
+header {
     margin: auto;
     color: var(--ns-dark-blue);
     background-color: var(--ns-yellow);
 }
 
-input:user-invalid {
-    color: white;
-    background-color: rgba(255, 0, 0, 0.397);
-    width: 100%;
+legend,
+p {
+    color: var(--ns-dark-blue);
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 0.1em;
+    padding-top: 1em;
+    text-align: left;
 }
-
-input:user-valid {
-    border: 2px solid var(--ns-button-green);
-    width: 100%;
-}
-
-input:user-valid::before {
-    display: inline-block;
-    content: " ✔";
-    color: var(--ns-button-green);
-    font-size: 1em;
-    position: absolute;
-    margin-left: -30px;
-}
-
 
 /* MARK: Body elements */
 body {
     background-color: var(--ns-background-gray);
     margin: auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 1em;
+    background-color: var(--ns-yellow);
+}
+
+header h1 {
+    margin: 0;
+    color: var(--ns-dark-blue);
+    padding-left: 0.5em;
+}
+
+header img {
+    width: 6em;
+    height: auto;
 }
 
 /* MARK: Form elements */
@@ -66,9 +76,9 @@ label {
     margin: 0.05em;
     border-style: none;
     border-width: 1px;
-    border-color: lightgray;
+    border-color: var(--ns-border);
     border-radius: 4px;
-    background-color: white;
+    background-color: var(--white);
     color: var(--ns-dark-blue);
 }
 
@@ -91,7 +101,7 @@ form {
 
 fieldset fieldset {
     border-style: none;
-    background-color: white;
+    background-color: var(--white);
     margin-left: 1em;
     margin-right: 1em;
     padding: 1em;
@@ -100,14 +110,7 @@ fieldset fieldset {
     box-shadow: 3px 0 0 0 var(--ns-yellow);
 }
 
-legend {
-    color: var(--ns-dark-blue);
-    font-size: 1.1em;
-    font-weight: 500;
-    padding-top: 1em;
-}
-
-/* Form elements, specific types  */
+/* MARK: Form elements, specific types  */
 label:has(input[type="radio"]) {
     display: inline-flex;
     width: 49%;
@@ -116,7 +119,7 @@ label:has(input[type="radio"]) {
 
 label:has(input[type="radio"]:checked) {
     background-color: var(--ns-dark-blue);
-    color: white;
+    color: var(--text-color);
 }
 
 input[type="radio"] {
@@ -127,12 +130,12 @@ input[type="checkbox"] {
     width: 1em;
     height: 1em;
     accent-color: var(--ns-button-green);
-    color: white;
+    color: var(--text-color);
 }
 
 label:has(input[required])::before {
     content: " *";
-    color: red;
+    color: var(--required-not-filled);
     position: absolute;
     margin-left: -10px;
 }
@@ -142,29 +145,63 @@ label:has(input[required][type="radio"])::before {
     margin-top: -55px;
 }
 
-div:has(legend) {
+input[type="text"]:invalid:not(:placeholder-shown) {
+    color: var(--text-color);
+    background-color: var(--invalid-color);
+    width: 100%;
+}
+
+input:valid:not(:placeholder-shown) {
+    border: 2px solid var(--ns-button-green);
+    width: 100%;
+}
+
+input:valid::before {
+    display: inline-block;
+    content: " ✔";
+    color: var(--ns-button-green);
+    font-size: 1em;
+    position: absolute;
+    margin-left: -30px;
+}
+
+body:has(input[name="testament"][value="nee"]:checked) #NederlandWonend,
+body:has(input[name="testament"][value="ja"]:checked) #buitenLandWonend,
+body:has(input[name="kinderen"][value="ja"]:checked) #eerderOverledenField,
+body:has(input[name="getrouwd"][value="ja"]:checked) #notariëleField,
+body:has(input[name="testament"][value="ja"]:checked) #notarisInfo,
+body:has(input[name="nummerKeuze"][value="BSN"]:checked) label:has(input[name="BSNGemachtigde"]) ,
+body:has(input[name="nummerKeuze"][value="Becon"]:checked) label:has(input[name="BeconNummer"]) ,
+body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="protoColnummer"]) {
+    opacity: 1;
+    transition: opacity 0.3s ease, max-height 0.5s ease-out;
+    pointer-events: all;
+    max-height: fit-content;
+}
+
+body:has(input[name="testament"][value="ja"]:checked) #NederlandWonend,
+body:has(input[name="testament"][value="nee"]:checked) #buitenLandWonend,
+body:has(input[name="kinderen"][value="nee"]:checked) #eerderOverledenField,
+body:has(input[name="getrouwd"][value="nee"]:checked) #notariëleField,
+body:has(input[name="testament"][value="nee"]:checked) #notarisInfo,
+body:has(input[name="nummerKeuze"][value="BSN"]:checked) label:has(input[name="BeconNummer"],input[name="protoColnummer"]) ,
+body:has(input[name="nummerKeuze"][value="Becon"]:checked) label:has(input[name="BSNGemachtigde"],input[name="protoColnummer"]) ,
+body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="BSNGemachtigde"],input[name="BeconNummer"]) {
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    transition: opacity 0.1s ease, max-height 0.5s ease-out;
+    padding: 0;
+}
+
+/* MARK: Gesloten Elementen */
+.activeJs fieldset:has(:invalid)>div:has(p), .activeJs fieldset:has(:invalid)>div:has(legend), label:has(input[class="nummerGemachtigde"]) {
     opacity: 0.3;
     transition: opacity 0.3s ease;
     pointer-events: none;
 }
 
-
-div.unlocked {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    pointer-events: all;
-}
-
-div.disabled {
-    opacity: 0;
-    display: none;
-    pointer-events: none;
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition-behavior */
-    transition-property: opacity, display;
-    transition-duration: 0.25s;
-    transition-behavior: allow-discrete;
-}
-
+/* MARK: Verborgen Elementen */
 .hidden {
     display: none;
 }
@@ -180,7 +217,23 @@ div.disabled {
     opacity: 1;
 }
 
+/* MARK: Pagination */
 .pagina {
+    opacity: 1;
+    pointer-events: all;
+    height: auto;
+    position: relative;
+}
+
+.pagination {
+    display: none;
+}
+
+.activeJs .pagination {
+    display: flex;
+}
+
+.activeJs .pagina {
     position: absolute;
     top: 0;
     left: 0;
@@ -199,7 +252,7 @@ div.disabled {
     border-style: none;
 }
 
-.pagination {
+.activeJs .pagination {
     display: flex;
     position: relative;
     align-items: center;
@@ -215,19 +268,17 @@ div.disabled {
     width: 6em;
     height: 3em;
     border: 1px solid var(--ns-dark-blue);
-    border-radius: 4px;   
+    border-radius: 4px;
     color: var(--ns-dark-blue);
 }
 
-@media (min-width: 600px) {
+/* MARK: Media queries */
+@media (min-width: 650px) {
+
     h1,
     h2,
     p {
-        grid-column: 2;    
-    }
-
-    label {
-        width: 1fr;
+        grid-column: 2;
     }
 
     fieldset fieldset {
@@ -242,10 +293,13 @@ div.disabled {
     .first-three {
         display: flex;
         gap: 0.2em;
+    }
+
+    .first-three:has(input[type="text"]) {
         padding: 1em;
     }
 
-    .first-three label {
+    .first-three label:has(input[type="text"]) {
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -264,8 +318,8 @@ div.disabled {
     }
 }
 
-@media (max-width: 450px){
+@media (max-width: 465px) {
     label:has(input[type="radio"]) {
         width: 100%;
-    }   
+    }
 }
