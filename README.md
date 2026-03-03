@@ -50,7 +50,7 @@ Datum input stylen met CSS. Pagination wat verder uitwerken, en meer CSS stylen 
 - 14:30 Jacco geholpen met Code
 - 16:00 Checkout
 
-Gesprek met:
+Gesprek met Teun:
 Vandaag heb ik heel veel gedaan. Ik heb bijna al mijn doelen van gisteren bereikt en heb zelfs meer kunnen doen. Ik begon vandaag met Javascript code omzetten naar CSS. Dit was niet heel makkelijk. Hoe één korte functie in javascript makkelijk te maken was, was het moeilijk om dit compact te houden voor CSS. Uiteindelijk heb ik dit met heel veel code moeten aanpakken.
 <img width="1199" height="653" alt="image" src="https://github.com/user-attachments/assets/255cb973-acff-42ee-92c8-42d0fa560b1c" />
 Daarna ben ik verder gegaan met de pagination. Op dit moment werd dit via javascript gedaan, maar ik wilde een failsafe maken voorals er geen javascript kon worden geladen. In de Javascript en CSS heb ik een systeem gemaakt waar bepaalde css alleen wordt geladen als er javascript aanwezig is, dit geldt ook voor de pagination. De pagination is alleen aanwezig als er javascript is, zo niet dan is het een one-pager.
