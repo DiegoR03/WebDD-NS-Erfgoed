@@ -26,3 +26,19 @@ Kort vertelt wat ik vandaag heb bereikt, ik heb gewerkt aan de CSS van mijn webs
 
 Morgen:
 Tekst elementen in klappen op bepaalde antwoorden, meer kijken naar eis voorwaarden opdracht
+
+## 02/03/2026
+- 09:30 begonnen met een korte intro van Vasilis na de vakantie, we kregen wat snelle uitleg en wat korte opfrissers.
+- 10:00 begonnen met verder werken aan de NS erfgoed website (deze keer geen workshop gevolgd)
+- 12:30 korte pauze
+- 13:00 uitleg over UX opdracht (Links)
+- 13:10 verder werken aan de website
+- 15:00 Weekly Geek doornemen
+- 16:00 checkout met Matthew
+
+Gesprek met Matthew:
+Vandaag heb ik verassend veel bereikt voor een eerste dag na de vakantie. Ik ben vandaag begonnen met het omgooien van mijn input types. De types zelf waren correct, maar de opstelling van de CSS niet. Ik had veel input types de verkeerde opmaak gegeven waardoor het rommelig was. Daarnaast heb ik gewerkt aan de feedback voor een invalid en valid input. Ik heb ook gewerkt aan pagination van de website. Ik wil nog meer pagina's toevoegen, 1 grote pagina is niet makkelijk leesbaar en is rommelig, ik heb een dynamische pagination toegevoegd (Nog geen overzichtelijk systeem). Als laatste heb ik opnieuw gewerkt aan het verbergen en vertonen van secties. Vooraf had ik dat een sectie doorzichtig was, maar dit was rommelig, nu heb ik het zo gemaakt dat een sectie doorzichtig is als je nog niet heb aangeklikt, zichtbaar wordt als je op "Ja" klikt, en verdwijnt als je op "Nee" klikt.
+
+Morgen:
+Datum input stylen met CSS. Pagination wat verder uitwerken, en meer CSS stylen voor de input types (Bijvoorbeeld als er twee naast elkaar moeten worden geplaats, of kortere input types voor huisnummers). Ook wil ik werken aan de Land codes. Ook ga ik focussen om alle code te kunnen werken zonder Javascript, sommige onderdelen zijn heel erg afhankelijk van Javascript.
+
