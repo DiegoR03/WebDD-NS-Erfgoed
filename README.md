@@ -60,3 +60,11 @@ Verder heb ik mij heel erg gefocust op het netjes maekn van CSS elementen en HTM
 Volgende keer:
 Ik wil kijken of ik nog meer Javascript kan omzetten naar CSS. Hoewel dit ver gezocht is, wil ik het wel proberen. Ik wil mijn input types nog verder stylen zodat het nog duidelijker is wanneer is valid is en wanneer niet. Ook wil ik de land codes proberen. Ik heb veel gezocht op google maar kon geen antwoorden vinden, misschien moet ik het proberen met ChatGPT.
 
+## 06/03/2026
+- 14:15 Kort gewerkt
+- 14:40 Gesprek met Sanne
+- 15:30 Gesprek met Vasilis
+
+Uitleg:
+Ik heb een kort gesprek gehad met Vasilis over mijn progressie binnen de website en hoe ik ervoor sta. Hij was zeer tevreden en gaf mij zelf wat tips waar ik op moet letten voor volgende week. Ten eerste gebruik ik nu :invalid en :valid voor mijn website. Deze kunnen weer terug veranderd worden naar :user-valid en :user-invalid, deze werken beter. Ik heb deze in eerste instantie niet gebruikt omdat deze niet overeen kwamen met de CSS validation in Visual studio code, maar Vasilis gaf aan dat ik daar niet op hoef te letten. Daarnaast heb ik een Indeterminate state gemaakt , maar op dit moment heb ik dat gedaan met :invalid. Dit kan dus met de indeterminate state gedaan worden in CSS. Als laatste moet ik opletten dat ik de required state gebruik in html. Op dit moment heb ik ze altijd op required staan, maar met javascript moet ik e alleen required maken als ze zichtbaar zijn.
+
