@@ -68,3 +68,37 @@ Ik wil kijken of ik nog meer Javascript kan omzetten naar CSS. Hoewel dit ver ge
 Uitleg:
 Ik heb een kort gesprek gehad met Vasilis over mijn progressie binnen de website en hoe ik ervoor sta. Hij was zeer tevreden en gaf mij zelf wat tips waar ik op moet letten voor volgende week. Ten eerste gebruik ik nu :invalid en :valid voor mijn website. Deze kunnen weer terug veranderd worden naar :user-valid en :user-invalid, deze werken beter. Ik heb deze in eerste instantie niet gebruikt omdat deze niet overeen kwamen met de CSS validation in Visual studio code, maar Vasilis gaf aan dat ik daar niet op hoef te letten. Daarnaast heb ik een Indeterminate state gemaakt , maar op dit moment heb ik dat gedaan met :invalid. Dit kan dus met de indeterminate state gedaan worden in CSS. Als laatste moet ik opletten dat ik de required state gebruik in html. Op dit moment heb ik ze altijd op required staan, maar met javascript moet ik e alleen required maken als ze zichtbaar zijn.
 
+## 09/03/2026
+- 09:30 Intro Rijk van Zanten
+- 10:30 Verder werken aan de NS Erfgoed Website (Ook deze keer geen workshop)
+- 12:00 Pauze
+- 12:45 Verder gewerkt aan de website
+- 16:00 Checkout
+
+Gesprek met:
+Vandaag heb ik heel veel bereikt wat ik vorige week als doel had opgesteld. Mijn doelen waren voor vandaag:
+- :valid/:invalid omzetten naar :user-valid en :user-invalid
+- De indeterminate state gebruiken inplaats van invalid
+- Required dynamisch toevoegen aan objecten als deze actief zijn.
+<br>
+Alle drie de doelen zijn vandaag best snel bereikt. De :user-valid oplossing bleek beter te werken omdat deze pas de valid state aanpast als je klaar bent met typen, de :valid state houdt dit constant bij tijdens elke letter die je typt. De indeterminate state is een betere oplossing als er nog geen radio buttons zijn aangeklikt, voorgaande had ik de invalid state, maar dit gaf vaak wat kleine problemen als je nog niks had ingevuld, alles was altijd rood. En als laatste heb ik de required dynamisch gemaakt, deze wordt nu door middel van javascript toegevoegd als hij een opacity van 1 heeft. Natuurlijk heb ik hiervoor ook een fallback gemaakt in de HTML, bepaalde elementen zijn alijd required, maar children zijn vaan niet required.
+<br>
+// Nog niet geopend, niet required
+<img width="1536" height="634" alt="image" src="https://github.com/user-attachments/assets/dbf57b8f-ebfe-48a7-b4b3-5a20d7f9049e" />
+
+// Geopend, met required
+<img width="1541" height="650" alt="image" src="https://github.com/user-attachments/assets/b7fce61f-7871-4c27-9ee2-0e76459fa552" />
+
+<br>
+Naast deze doelen heb ik verder gewerkt aan de derde pagina, hier moet je namelijk verkrijgers dynamisch toe kunnen voegen met knoppen, dit is mij vandaag evrassend genoeg nog gelukt voor 4 uur, en in deze objecten zit zelfs een validatie. Je moet de vorige verkrijger compleet ingevuld hebben voordat je naar de volgende gaat.
+<br><br>
+// Neutrale staat
+<img width="1550" height="836" alt="image" src="https://github.com/user-attachments/assets/01f346a2-5a0f-4c92-837b-017747cb2151" />
+
+// Toegevoegde staat
+<img width="1522" height="823" alt="image" src="https://github.com/user-attachments/assets/4ffb76f8-e78a-41cb-baa3-3a8fa76a1ad7" />
+
+// Nog niet ingevulde staat
+<img width="1538" height="785" alt="image" src="https://github.com/user-attachments/assets/b1be85b3-c554-497e-8362-9708f5a0abb5" />
+
+
