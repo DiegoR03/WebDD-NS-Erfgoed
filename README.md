@@ -100,5 +100,6 @@ Naast deze doelen heb ik verder gewerkt aan de derde pagina, hier moet je nameli
 
 // Nog niet ingevulde staat
 <img width="1538" height="785" alt="image" src="https://github.com/user-attachments/assets/b1be85b3-c554-497e-8362-9708f5a0abb5" />
-
+<br><br>
+Morgen ga ik werken aan wat simpele styling voor de website, ik wil het logo maken met een svg en deze van kleur laten veranderen op hover. Ik wil wat kleine details toevoegen om het meer als een NS website te laten voelen, en ik wil het dynamisch toevoegen van verkrijgers verbeteren.
 
