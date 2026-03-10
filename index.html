@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="img/NS_Logo.png">
+    <title>Erfbelasting Form | Browser Tech</title>
 </head>
 
 <body>
     <header>
-        <img src="/img/NS_Logo.png" alt="Dit is een foto van het logo van NS, een symbool om te laten zien dat deze website van de NS is.">
-        <h1>Dit is voor een schoolopdracht!!!!</h1>
+        <div class="ns-logo-vak">
+            <button class="logo-button" onclick="location.reload()">
+                <svg class="ns-svg" viewBox="0 0 175 69" xmlns="http://www.w3.org/2000/svg">
+                    <path xmlns="http://www.w3.org/2000/svg"
+                        d="M 76.19003,32.7088 C 72.73763,29.33945 68.00393,27.23954 62.8194,27.23954 L 26.08874,27.23954 L 39.67292,13.61977 L 74.23248,13.61977 C 75.69174,13.6435 77.05609,14.28415 78.01707,15.24513 L 98.07894,35.36632 C 101.53134,38.7238 106.25317,40.83558 111.47329,40.83558 L 148.23955,40.83558 L 134.63165,54.45535 L 100.10767,54.45535 C 98.62468,54.40789 97.28406,53.77911 96.31122,52.78254 L 76.19003,32.7088 z M 86.68959,62.43976 C 90.10639,65.89216 94.85196,68.06325 100.10767,68.06325 L 140.23141,68.06325 L 174.29269,34.03756 L 140.23141,0 L 121.00001,0 L 148.23955,27.23954 L 111.47329,27.23954 C 110.0259,27.23954 108.67351,26.65821 107.7243,25.73282 L 87.6387,5.64723 C 84.19817,2.15924 79.46447,0.01187 74.23248,0 L 34.04952,0 L 0,34.03756 L 34.04952,68.06325 L 53.29268,68.06325 L 26.08874,40.83558 L 62.8194,40.83558 C 64.27866,40.83558 65.59556,41.41691 66.5684,42.36602 L 86.68959,62.43976"/>
+                </svg>
+            </button>
+        </div>
     </header>
-    
+    <div class="waarschuwing-container">
+        <div class="waarschuwing-rij">
+            <!-- Warning svg - https://www.svgrepo.com/svg/339665/warning-01 -->
+            <svg class="warning-svg" viewBox="0 0 32 32">
+            <path d="M31,29.36H1c-0.128,0-0.248-0.069-0.312-0.181c-0.064-0.111-0.064-0.248,0-0.359l15-26  c0.129-0.224,0.495-0.224,0.624,0l15,26c0.064,0.111,0.064,0.248,0,0.359S31.129,29.36,31,29.36z M1.624,28.64h28.753L16,3.72  L1.624,28.64z M16.36,20h-0.72V10h0.72V20z M16,23c-0.552,0-1,0.448-1,1s0.448,1,1,1s1-0.448,1-1S16.552,23,16,23z"/>
+            </svg>
+            <p class="waarschuwing-tekst">Deze website is voor een schoolopdracht!</p>
+            <span class="waarschuwing-pijl">&rsaquo;</span>
+        </div>
+    </div>
+
     <form>
         <fieldset class="pagina" id="onderdeel1">
             <fieldset>
@@ -39,7 +56,7 @@
                 </label>
                 <label>
                     Overlijdensdatum
-                    <input required class="datePickerID" type="date" name="overlijdingsDatum"\>
+                    <input required class="datePickerID" type="date" name="overlijdingsDatum" \>
                 </label>
             </fieldset>
 
@@ -47,7 +64,7 @@
                 <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van
                     overlijden?</legend>
                 <label>
-                    <input type="radio" name="getrouwd" value="ja" required>
+                    <input required type="radio" name="getrouwd" value="ja">
                     Ja
                 </label>
                 <label>
@@ -58,7 +75,7 @@
                     <p>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of
                         partnerschapsvoorwaarden laten vastleggen in een notariële akte?</p>
                     <label>
-                        <input type="radio" name="notariële" value="ja" required>
+                        <input type="radio" name="notariële" value="ja">
                         Ja
                     </label>
                     <label>
@@ -68,12 +85,17 @@
 
                     <p>Hadden de overledene en diens partner een finaal verrekenbeding?</p>
                     <label>
-                        <input type="radio" name="verrekenBeding" value="ja" required>
+                        <input type="radio" name="verrekenBeding" value="ja">
                         Ja
                     </label>
                     <label>
                         <input type="radio" name="verrekenBeding" value="nee">
                         Nee
+                    </label>
+
+                    <p>Datum huwelijkse of partnerschapsvoorwaarden</p>
+                    <label>
+                        <input class="datePickerID" type="date" name="overlijdingsDatum" \>
                     </label>
                 </div>
             </fieldset>
@@ -81,7 +103,7 @@
             <fieldset>
                 <legend>Had de overledene kinderen?</legend>
                 <label>
-                    <input type="radio" name="kinderen" value="ja" required>
+                    <input required type="radio" name="kinderen" value="ja">
                     Ja
                 </label>
                 <label>
@@ -91,7 +113,7 @@
                 <div id="eerderOverledenField">
                     <p>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</p>
                     <label>
-                        <input type="radio" name="eerder" value="ja" required>
+                        <input type="radio" name="eerder" value="ja">
                         Ja
                     </label>
                     <label>
@@ -101,7 +123,7 @@
 
                     <p>Had dit overleden kind zelf kinderen?</p>
                     <label>
-                        <input type="radio" name="zelf" value="ja" required>
+                        <input type="radio" name="zelf" value="ja">
                         Ja
                     </label>
                     <label>
@@ -114,7 +136,7 @@
             <fieldset>
                 <legend>Had de overledene een testament?</legend>
                 <label>
-                    <input type="radio" name="testament" value="ja" required>
+                    <input required type="radio" name="testament" value="ja">
                     Ja
                 </label>
                 <label>
@@ -125,13 +147,13 @@
                     <p>Notaris Informatie</p>
                     <label>
                         Protocolnummer notaris
-                        <input required type="number" name="notaris" placeholder="0123456789">
+                        <input type="number" name="notaris" placeholder="0123456789">
                     </label>
 
                     <div class="first-three">
                         <label>
                             Voornaam
-                            <input required type="text" name="voorLetterTestament" placeholder="Voorletter(s)">
+                            <input type="text" name="voorLetterTestament" placeholder="Voorletter(s)">
                         </label>
                         <label>
                             Tussenvoegsel(s)
@@ -139,18 +161,18 @@
                         </label>
                         <label>
                             Achternaam
-                            <input required type="text" name="achterNaamTestament" placeholder="Achternaam">
+                            <input type="text" name="achterNaamTestament" placeholder="Achternaam">
                         </label>
-                    </div>    
+                    </div>
 
                     <label>
                         Vestigingsplaats
-                        <input required type="text" name="vestiging" placeholder="Vestigingsplaats">
+                        <input type="text" name="vestiging" placeholder="Vestigingsplaats">
                     </label>
 
                     <label>
                         Datum van het testament of van de laatste wijziging
-                        <input required class="datePickerID" type="date" name="testamentDatum">
+                        <input class="datePickerID" type="date" name="testamentDatum">
                     </label>
                 </div>
             </fieldset>
@@ -162,7 +184,7 @@
                 <div class="first-three">
                     <label>
                         BSN
-                        <input type="radio" name="nummerKeuze" value="BSN" required>
+                        <input required type="radio" name="nummerKeuze" value="BSN">
                     </label>
                     <label>
                         Becon
@@ -175,15 +197,18 @@
                 </div>
                 <label>
                     BSN/RSIN van de gemachtigde
-                    <input class="nummerGemachtigde" type="number" name="BSNGemachtigde" placeholder="Bsn/RSIN gemachtigde" required>
+                    <input required class="nummerGemachtigde" type="number" name="BSNGemachtigde"
+                        placeholder="Bsn/RSIN gemachtigde">
                 </label>
                 <label>
                     Het Beconnummer van de adviseur
-                    <input class="nummerGemachtigde" type="number" name="BeconNummer" placeholder="Beconnummer adviseur">
+                    <input class="nummerGemachtigde" type="number" name="BeconNummer"
+                        placeholder="Beconnummer adviseur">
                 </label>
                 <label>
                     Protocolnummer van de notaris
-                    <input class="nummerGemachtigde" type="number" name="protoColnummer" placeholder="Protocolnummer notaris">
+                    <input class="nummerGemachtigde" type="number" name="protoColnummer"
+                        placeholder="Protocolnummer notaris">
                 </label>
                 <div class="first-three">
                     <label>
@@ -207,7 +232,7 @@
             <fieldset>
                 <legend>Woont in het buitenland?</legend>
                 <label>
-                    <input type="radio" name="testament" value="ja" required>
+                    <input required type="radio" name="testament" value="ja">
                     Ja
                 </label>
                 <label>
@@ -216,14 +241,14 @@
                 </label>
                 <div id="NederlandWonend">
                     <p>Binnen Nederland: </p>
-                        <div class="first-three">
+                    <div class="first-three">
                         <label>
                             Straat
-                            <input required type="text" name="straatGemachtigde" placeholder="Straatnaam">
+                            <input type="text" name="straatGemachtigde" placeholder="Straatnaam">
                         </label>
                         <label>
                             Huisnummer
-                            <input required type="text" name="huisNummerGemachtigde" placeholder="Huisnummer">
+                            <input type="text" name="huisNummerGemachtigde" placeholder="Huisnummer">
                         </label>
                         <label>
                             Toevoeging
@@ -234,67 +259,480 @@
                     <p>Postcode, plaats</p>
                     <label>
                         Postcode
-                        <input required type="number" name="postCodeGemachtigde" placeholder="Postcode">
+                        <input type="number" name="postCodeGemachtigde" placeholder="Postcode">
                     </label>
                     <label>
                         Plaats
-                        <input required type="text" name="plaatsGemachtigde" placeholder="Plaats">
+                        <input type="text" name="plaatsGemachtigde" placeholder="Plaats">
                     </label>
                 </div>
                 <div id="buitenLandWonend">
                     <p>Buitenland: Straat, Huisnummer en toevoeging</p>
-                    <label>
-                        <input required type="text" name="straatGemachtigde" placeholder="Straatnaam">
-                    </label>
-                    <label>
-                        <input required type="text" name="huisNummerGemachtigde" placeholder="Huisnummer">
-                    </label>
-                    <label>
-                        <input type="text" name="ToevoegingGemachtigde" placeholder="Toevoeging">
-                    </label>
+                    <div class="first-three">
+                        <label>
+                            <input type="text" name="straatGemachtigde" placeholder="Straatnaam">
+                        </label>
+                        <label>
+                            <input type="text" name="huisNummerGemachtigde" placeholder="Huisnummer">
+                        </label>
+                        <label>
+                            <input type="text" name="ToevoegingGemachtigde" placeholder="Toevoeging">
+                        </label>
+                    </div>
 
                     <p>Postcode, plaats en landcode</p>
                     <label>
-                        <input required type="number" name="postCodeGemachtigdeBuitenland" placeholder="Postcode">
+                        <input type="number" name="postCodeGemachtigdeBuitenland" placeholder="Postcode">
                     </label>
                     <label>
-                        <input required type="text" name="plaatsGemachtigdeBuitenland" placeholder="Plaats">
+                        <input type="text" name="plaatsGemachtigdeBuitenland" placeholder="Plaats">
                     </label>
                     <label>
-                        <input required type="number" name="landCodeGemachtigdeBuitenland" placeholder="Landcode">
+                        Landcode
+                        <select name="landcode" id="landcode">
+                            <option value="" disabled selected>Kies een land...</option>
+                            <option value="AF">AF - Afghanistan</option>
+                            <option value="AX">AX - Åland Islands</option>
+                            <option value="AL">AL - Albania</option>
+                            <option value="DZ">DZ - Algeria</option>
+                            <option value="AS">AS - American Samoa</option>
+                            <option value="AD">AD - Andorra</option>
+                            <option value="AO">AO - Angola</option>
+                            <option value="AI">AI - Anguilla</option>
+                            <option value="AQ">AQ - Antarctica</option>
+                            <option value="AG">AG - Antigua and Barbuda</option>
+                            <option value="AR">AR - Argentina</option>
+                            <option value="AM">AM - Armenia</option>
+                            <option value="AW">AW - Aruba</option>
+                            <option value="AU">AU - Australia</option>
+                            <option value="AT">AT - Austria</option>
+                            <option value="AZ">AZ - Azerbaijan</option>
+                            <option value="BS">BS - Bahamas</option>
+                            <option value="BH">BH - Bahrain</option>
+                            <option value="BD">BD - Bangladesh</option>
+                            <option value="BB">BB - Barbados</option>
+                            <option value="BY">BY - Belarus</option>
+                            <option value="BE">BE - Belgium</option>
+                            <option value="BZ">BZ - Belize</option>
+                            <option value="BJ">BJ - Benin</option>
+                            <option value="BM">BM - Bermuda</option>
+                            <option value="BT">BT - Bhutan</option>
+                            <option value="BO">BO - Bolivia</option>
+                            <option value="BA">BA - Bosnia and Herzegovina</option>
+                            <option value="BW">BW - Botswana</option>
+                            <option value="BV">BV - Bouvet Island</option>
+                            <option value="BR">BR - Brazil</option>
+                            <option value="IO">IO - British Indian Ocean Territory</option>
+                            <option value="BN">BN - Brunei Darussalam</option>
+                            <option value="BG">BG - Bulgaria</option>
+                            <option value="BF">BF - Burkina Faso</option>
+                            <option value="BI">BI - Burundi</option>
+                            <option value="KH">KH - Cambodia</option>
+                            <option value="CM">CM - Cameroon</option>
+                            <option value="CA">CA - Canada</option>
+                            <option value="CV">CV - Cape Verde</option>
+                            <option value="KY">KY - Cayman Islands</option>
+                            <option value="CF">CF - Central African Republic</option>
+                            <option value="TD">TD - Chad</option>
+                            <option value="CL">CL - Chile</option>
+                            <option value="CN">CN - China</option>
+                            <option value="CX">CX - Christmas Island</option>
+                            <option value="CC">CC - Cocos (Keeling) Islands</option>
+                            <option value="CO">CO - Colombia</option>
+                            <option value="KM">KM - Comoros</option>
+                            <option value="CG">CG - Congo</option>
+                            <option value="CD">CD - Congo, Democratic Republic</option>
+                            <option value="CK">CK - Cook Islands</option>
+                            <option value="CR">CR - Costa Rica</option>
+                            <option value="CI">CI - Côte d'Ivoire</option>
+                            <option value="HR">HR - Croatia</option>
+                            <option value="CU">CU - Cuba</option>
+                            <option value="CY">CY - Cyprus</option>
+                            <option value="CZ">CZ - Czech Republic</option>
+                            <option value="DK">DK - Denmark</option>
+                            <option value="DJ">DJ - Djibouti</option>
+                            <option value="DM">DM - Dominica</option>
+                            <option value="DO">DO - Dominican Republic</option>
+                            <option value="EC">EC - Ecuador</option>
+                            <option value="EG">EG - Egypt</option>
+                            <option value="SV">SV - El Salvador</option>
+                            <option value="GQ">GQ - Equatorial Guinea</option>
+                            <option value="ER">ER - Eritrea</option>
+                            <option value="EE">EE - Estonia</option>
+                            <option value="ET">ET - Ethiopia</option>
+                            <option value="FK">FK - Falkland Islands</option>
+                            <option value="FO">FO - Faroe Islands</option>
+                            <option value="FJ">FJ - Fiji</option>
+                            <option value="FI">FI - Finland</option>
+                            <option value="FR">FR - France</option>
+                            <option value="GF">GF - French Guiana</option>
+                            <option value="PF">PF - French Polynesia</option>
+                            <option value="TF">TF - French Southern Territories</option>
+                            <option value="GA">GA - Gabon</option>
+                            <option value="GM">GM - Gambia</option>
+                            <option value="GE">GE - Georgia</option>
+                            <option value="DE">DE - Germany</option>
+                            <option value="GH">GH - Ghana</option>
+                            <option value="GI">GI - Gibraltar</option>
+                            <option value="GR">GR - Greece</option>
+                            <option value="GL">GL - Greenland</option>
+                            <option value="GD">GD - Grenada</option>
+                            <option value="GP">GP - Guadeloupe</option>
+                            <option value="GU">GU - Guam</option>
+                            <option value="GT">GT - Guatemala</option>
+                            <option value="GG">GG - Guernsey</option>
+                            <option value="GN">GN - Guinea</option>
+                            <option value="GW">GW - Guinea-Bissau</option>
+                            <option value="GY">GY - Guyana</option>
+                            <option value="HT">HT - Haiti</option>
+                            <option value="HM">HM - Heard Island and McDonald Islands</option>
+                            <option value="VA">VA - Holy See (Vatican City State)</option>
+                            <option value="HN">HN - Honduras</option>
+                            <option value="HK">HK - Hong Kong</option>
+                            <option value="HU">HU - Hungary</option>
+                            <option value="IS">IS - Iceland</option>
+                            <option value="IN">IN - India</option>
+                            <option value="ID">ID - Indonesia</option>
+                            <option value="IR">IR - Iran</option>
+                            <option value="IQ">IQ - Iraq</option>
+                            <option value="IE">IE - Ireland</option>
+                            <option value="IM">IM - Isle of Man</option>
+                            <option value="IL">IL - Israel</option>
+                            <option value="IT">IT - Italy</option>
+                            <option value="JM">JM - Jamaica</option>
+                            <option value="JP">JP - Japan</option>
+                            <option value="JE">JE - Jersey</option>
+                            <option value="JO">JO - Jordan</option>
+                            <option value="KZ">KZ - Kazakhstan</option>
+                            <option value="KE">KE - Kenya</option>
+                            <option value="KI">KI - Kiribati</option>
+                            <option value="KP">KP - Korea, North</option>
+                            <option value="KR">KR - Korea, South</option>
+                            <option value="KW">KW - Kuwait</option>
+                            <option value="KG">KG - Kyrgyzstan</option>
+                            <option value="LA">LA - Laos</option>
+                            <option value="LV">LV - Latvia</option>
+                            <option value="LB">LB - Lebanon</option>
+                            <option value="LS">LS - Lesotho</option>
+                            <option value="LR">LR - Liberia</option>
+                            <option value="LY">LY - Libya</option>
+                            <option value="LI">LI - Liechtenstein</option>
+                            <option value="LT">LT - Lithuania</option>
+                            <option value="LU">LU - Luxembourg</option>
+                            <option value="MO">MO - Macao</option>
+                            <option value="MK">MK - Macedonia</option>
+                            <option value="MG">MG - Madagascar</option>
+                            <option value="MW">MW - Malawi</option>
+                            <option value="MY">MY - Malaysia</option>
+                            <option value="MV">MV - Maldives</option>
+                            <option value="ML">ML - Mali</option>
+                            <option value="MT">MT - Malta</option>
+                            <option value="MH">MH - Marshall Islands</option>
+                            <option value="MQ">MQ - Martinique</option>
+                            <option value="MR">MR - Mauritania</option>
+                            <option value="MU">MU - Mauritius</option>
+                            <option value="YT">YT - Mayotte</option>
+                            <option value="MX">MX - Mexico</option>
+                            <option value="FM">FM - Micronesia</option>
+                            <option value="MD">MD - Moldova</option>
+                            <option value="MC">MC - Monaco</option>
+                            <option value="MN">MN - Mongolia</option>
+                            <option value="ME">ME - Montenegro</option>
+                            <option value="MS">MS - Montserrat</option>
+                            <option value="MA">MA - Morocco</option>
+                            <option value="MZ">MZ - Mozambique</option>
+                            <option value="MM">MM - Myanmar</option>
+                            <option value="NA">NA - Namibia</option>
+                            <option value="NR">NR - Nauru</option>
+                            <option value="NP">NP - Nepal</option>
+                            <option value="NL">NL - Netherlands</option>
+                            <option value="NC">NC - New Caledonia</option>
+                            <option value="NZ">NZ - New Zealand</option>
+                            <option value="NI">NI - Nicaragua</option>
+                            <option value="NE">NE - Niger</option>
+                            <option value="NG">NG - Nigeria</option>
+                            <option value="NU">NU - Niue</option>
+                            <option value="NF">NF - Norfolk Island</option>
+                            <option value="MP">MP - Northern Mariana Islands</option>
+                            <option value="NO">NO - Norway</option>
+                            <option value="OM">OM - Oman</option>
+                            <option value="PK">PK - Pakistan</option>
+                            <option value="PW">PW - Palau</option>
+                            <option value="PS">PS - Palestinian Territory</option>
+                            <option value="PA">PA - Panama</option>
+                            <option value="PG">PG - Papua New Guinea</option>
+                            <option value="PY">PY - Paraguay</option>
+                            <option value="PE">PE - Peru</option>
+                            <option value="PH">PH - Philippines</option>
+                            <option value="PN">PN - Pitcairn</option>
+                        </select>
                     </label>
                 </div>
             </fieldset>
         </fieldset>
+
         <fieldset class="pagina" id="onderdeel3">
             <h2>Voor wie doet u aangifte?</h2>
             <p>Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen? Dan moet de
                 executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap
                 (verkrijgers). Lees de toelichting bij vraag 3.</p>
             <fieldset>
+                <legend>Is er een executeur aanwezig?</legend>
                 <label>
-                    <input type="checkbox" name="verkrijgersAantallen" id="executeur" box-enable="verkrijgersAantallen">
-                    Ik ben executeur en doe aangifte voor alle personen en/of instellingen die iets krijgen uit
+                    <input required type="radio" name="executeurAanwezig" value="ja">
+                    Ja
+                </label>
+                <label>
+                    <input type="radio" name="executeurAanwezig" value="nee">
+                    Nee
+                </label>
+
+                <div id="welExecuteur">
+                    <p>Ik ben executeur</p>
+                    <label>
+                        <input type="radio" name="zelfExecuteur" data-enable="zelfExecuteur">
+                        Ik ben executeur en doe aangifte voor alle personen en/of instellingen die iets krijgen uit
                         de nalatenschap (verkrijgers). Geef aan voor hoeveel verkrijgers u aangifte doet. Bent u zelf
-                        ook verkrijger? Tel uzelf dan ook mee.
-                </label>
-                <label>
-                    <input type="number" class="hidden" name="verkrijgersAantallen" placeholder="Verkrijgers aantallen"
-                        id="verkrijgersAantallen">
-                </label>
-            </fieldset>
-            <fieldset>
-                <label>
-                    <input type="checkbox" name="gemachtigd" id="gemachtigdID" box-enable="verkrijgersAantallen">
-                    Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor meerdere personen en/of
+                        ook verkrijger? Klik hier en tel uzelf dan ook mee.
+                    </label>
+                    <label>
+                        <input type="number" class="hidden" name="zelfExecuteurAantallen"
+                            placeholder="Verkrijgers aantallen" id="zelfExecuteur">
+                    </label>
+                </div>
+
+                <div id="geenExecuteur">
+                    <p>Is er geen executeur aangewezen? Klik dan op de situatie die voor u geldt.</p>
+                    <label>
+                        <input type="radio" name="geenExecuteur" value="metAndereVekrijgers"
+                            data-enable="metAndereVekrijgers">
+                        Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor meerdere personen en/of
                         instellingen die iets krijgen uit de nalatenschap (verkrijgers). Geef aan voor hoeveel
                         verkrijgers u aangifte doet. Tel uzelf ook mee.
+                    </label>
+                    <label>
+                        <input type="number" class="hidden" name="metAndereVerkrijgersAantallen"
+                            placeholder="Verkrijgers Aantallen" id="metAndereVekrijgers">
+                    </label>
+
+                    <label>
+                        <input type="radio" name="geenExecuteur" value="metAndereErfgenamen"
+                            data-enable="metAndereErfgenamen">
+                        Ik ben erfgenaam en doe samen met andere erfgenamen aangifte.
+                        Geef het aantal personen en/of instellingen aan die iets krijgen uit de nalatenschap
+                        (verkrijgers). Tel uzelf ook mee.
+                    </label>
+                    <label>
+                        <input type="number" class="hidden" name="metAndereErfgenamenAantallen"
+                            placeholder="Aangifte aantallen" id="metAndereErfgenamen">
+                    </label>
+
+                    <label>
+                        <input type="radio" name="geenExecuteur" value="alleenMijzelf" data-enable="alleenErfgenaam">
+                        Ik ben erfgenaam en doe alleen aangifte voor mijzelf
+                    </label>
+
+                    <label>
+                        <input type="radio" name="geenExecuteur" value="geenErfgenaam" data-enable="geenErfgenaam">
+                        Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te doen.
+                        Geef aan voor hoeveelverkrijgers u aangifte doet
+                    </label>
+                    <label>
+                        <input type="number" class="hidden" name="geenErfgenaamAantallen"
+                            placeholder="Aangifte aantallen" id="geenErfgenaam">
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Zijn er verkrijgers voor wie u geen aangifte doet?</legend>
+                <label>
+                    <input required type="radio" name="GeenAangifteVerkrijgers" value="ja">
+                    Ja
                 </label>
                 <label>
-                    <input type="number" class="hidden" name="gemachtigd2" placeholder="Verkrijgers aantallen"
-                        id="gemachtigd">
+                    <input type="radio" name="GeenAangifteVerkrijgers" value="nee">
+                    Nee
                 </label>
+
+                <div id="VerkrijgersZonderAangifte">
+                    <div class="verkrijgersZonderJS">
+                        <div id="verkrijgerObject">
+                            <h4>Verkrijger 1</h4>
+                            <label>
+                                Bsn/RSIN
+                                <input type="number" class="hidden" name="BSN-RSIN-Verkrijger-1"
+                                    placeholder="Aangifte aantallen">
+                            </label>
+                            <div class="first-three">
+                                <label>
+                                    Voorletter
+                                    <input required type="text" name="voorLetterGemachtigde-1"
+                                        placeholder="Voorletter(s)">
+                                </label>
+                                <label>
+                                    Tussenvoegsel(s)
+                                    <input type="text" name="tussenVoegselGemachtigde-1" placeholder="Tussenvoegsel">
+                                </label>
+                                <label>
+                                    Achternaam
+                                    <input required type="text" name="achterNaamGemachtigde-1" placeholder="Achternaam">
+                                </label>
+                            </div>
+
+                            <p>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</p>
+                            <label>
+                                <input required type="radio" name="verkrijgerHeleVermogen-1" value="ja">
+                                Ja
+                            </label>
+                            <label>
+                                <input type="radio" name="verkrijgerHeleVermogen-1" value="nee">
+                                Nee
+                            </label>
+
+                            <p>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</p>
+                            <label>
+                                <input required type="radio" name="verkrijgerLegitiemeBeroep-1" value="ja">
+                                Ja
+                            </label>
+                            <label>
+                                <input type="radio" name="verkrijgerLegitiemeBeroep-1" value="nee">
+                                Nee
+                            </label>
+                        </div>
+                        <div id="verkrijgerObject">
+                            <h4>Verkrijger 2</h4>
+                            <label>
+                                Bsn/RSIN
+                                <input type="number" class="hidden" name="BSN-RSIN-Verkrijger-2"
+                                    placeholder="Aangifte aantallen">
+                            </label>
+                            <div class="first-three">
+                                <label>
+                                    Voorletter
+                                    <input type="text" name="voorLetterGemachtigde-2" placeholder="Voorletter(s)">
+                                </label>
+                                <label>
+                                    Tussenvoegsel(s)
+                                    <input type="text" name="tussenVoegselGemachtigde-2" placeholder="Tussenvoegsel">
+                                </label>
+                                <label>
+                                    Achternaam
+                                    <input type="text" name="achterNaamGemachtigde-2" placeholder="Achternaam">
+                                </label>
+                            </div>
+
+                            <p>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</p>
+                            <label>
+                                <input type="radio" name="verkrijgerHeleVermogen-2" value="ja">
+                                Ja
+                            </label>
+                            <label>
+                                <input type="radio" name="verkrijgerHeleVermogen-2" value="nee">
+                                Nee
+                            </label>
+
+                            <p>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</p>
+                            <label>
+                                <input type="radio" name="verkrijgerLegitiemeBeroep-2" value="ja">
+                                Ja
+                            </label>
+                            <label>
+                                <input type="radio" name="verkrijgerLegitiemeBeroep-2" value="nee">
+                                Nee
+                            </label>
+                        </div>
+
+                        <div id="verkrijgerObject">
+                            <h4>Verkrijger 3</h4>
+                            <label>
+                                Bsn/RSIN
+                                <input type="number" class="hidden" name="BSN-RSIN-Verkrijger-3"
+                                    placeholder="Aangifte aantallen">
+                            </label>
+                            <div class="first-three">
+                                <label>
+                                    Voorletter
+                                    <input type="text" name="voorLetterGemachtigde-3" placeholder="Voorletter(s)">
+                                </label>
+                                <label>
+                                    Tussenvoegsel(s)
+                                    <input type="text" name="tussenVoegselGemachtigde-3" placeholder="Tussenvoegsel">
+                                </label>
+                                <label>
+                                    Achternaam
+                                    <input type="text" name="achterNaamGemachtigde-3" placeholder="Achternaam">
+                                </label>
+                            </div>
+
+                            <p>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</p>
+                            <label>
+                                <input type="radio" name="verkrijgerHeleVermogen-3" value="ja">
+                                Ja
+                            </label>
+                            <label>
+                                <input type="radio" name="verkrijgerHeleVermogen-3" value="nee">
+                                Nee
+                            </label>
+
+                            <p>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</p>
+                            <label>
+                                <input type="radio" name="verkrijgerLegitiemeBeroep-3" value="ja">
+                                Ja
+                            </label>
+                            <label>
+                                <input type="radio" name="verkrijgerLegitiemeBeroep-3" value="nee">
+                                Nee
+                            </label>
+                        </div>
+
+                        <div id="verkrijgerObject">
+                            <h4>Verkrijger 4</h4>
+                            <label>
+                                Bsn/RSIN
+                                <input type="number" class="hidden" name="BSN-RSIN-Verkrijger-4"
+                                    placeholder="Aangifte aantallen">
+                            </label>
+                            <div class="first-three">
+                                <label>
+                                    Voorletter
+                                    <input type="text" name="voorLetterGemachtigde-4" placeholder="Voorletter(s)">
+                                </label>
+                                <label>
+                                    Tussenvoegsel(s)
+                                    <input type="text" name="tussenVoegselGemachtigde-4" placeholder="Tussenvoegsel">
+                                </label>
+                                <label>
+                                    Achternaam
+                                    <input type="text" name="achterNaamGemachtigde-4" placeholder="Achternaam">
+                                </label>
+                            </div>
+
+                            <p>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</p>
+                            <label>
+                                <input type="radio" name="verkrijgerHeleVermogen-4" value="ja">
+                                Ja
+                            </label>
+                            <label>
+                                <input type="radio" name="verkrijgerHeleVermogen-4" value="nee">
+                                Nee
+                            </label>
+
+                            <p>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</p>
+                            <label>
+                                <input type="radio" name="verkrijgerLegitiemeBeroep-4" value="ja">
+                                Ja
+                            </label>
+                            <label>
+                                <input type="radio" name="verkrijgerLegitiemeBeroep-4" value="nee">
+                                Nee
+                            </label>
+                        </div>
+                    </div>
+                    <button id="nieuweVerkrijgerButton">+Voeg nog een verkrijger toe</button>
+                </div>
             </fieldset>
+            <input type="submit">
         </fieldset>
     </form>
     <div class="pagination">

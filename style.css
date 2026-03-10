@@ -1,11 +1,16 @@
 :root {
     --white: #ffffff;
     --ns-yellow: #ffc917;
+    --ns-dark-yellow: #ffb519;
     --ns-dark-blue: #003082;
+    --ns-blue: #004ba0;
     --ns-light-blue: #0063d3;
     --ns-gray: #cfcfcf;
+    --ns-light-gray: #f2f2f2;
     --ns-button-green: #00aa89;
     --ns-background-gray: #e6e6e9;
+    --ns-red: #D90029;
+    --ns-dark-red: #650012;
     --ns-border: #c3c3c3;
     --text-color: #ffffff;
     --required-not-filled: #ff0000;
@@ -32,6 +37,9 @@ header {
     margin: auto;
     color: var(--ns-dark-blue);
     background-color: var(--ns-yellow);
+    /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .03), 0 10px 20px rgba(0, 0, 0, .04);
+    z-index: 1;
 }
 
 legend,
@@ -42,6 +50,72 @@ p {
     padding: 0.1em;
     padding-top: 1em;
     text-align: left;
+}
+
+/* MARK: Header elements */
+.ns-logo-vak {
+  width: 150px;
+  height: 100px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.ns-svg {
+  width: 100%;
+  max-width: 150px; 
+  height: auto;
+  fill: var(--ns-dark-blue);
+}
+
+.logo-button{
+    background-color: transparent;
+    border: none;
+}
+
+.logo-button:hover .ns-svg {
+    fill: var(--ns-yellow);
+    transition: fill 0.1s ease; 
+}
+
+.waarschuwing-container {
+    width: 100%;
+    border-top: 1px solid var(--ns-gray);
+}
+
+.waarschuwing-rij {
+    display: flex;
+    align-items: center; 
+    background-color: var(--ns-light-gray);
+    padding: 0.75em 1.2em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.warning-svg {
+    width: 1.2em;
+    height: 1.4em;
+    fill: var(--required-not-filled);
+    margin-left: 1.5em;
+    /* Flex shrink https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-shrink */
+    flex-shrink: 0; 
+}
+
+.waarschuwing-tekst {
+    margin: 0;
+    padding: 0.5em;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--ns-dark-blue);
+}
+
+.waarschuwing-pijl {
+    color: var(--ns-dark-blue);
+    font-size: 1.5em;
+    line-height: 0;
+    padding-bottom: 4px;
 }
 
 /* MARK: Body elements */
@@ -55,7 +129,8 @@ header {
     align-items: center;
     justify-content: center;
     padding: 0.5em 1em;
-    background-color: var(--ns-yellow);
+    background-color: var(--white);
+    box-shadow: 0 .125rem 0 0 rgba(7, 7, 33, .15);
 }
 
 header h1 {
@@ -82,7 +157,7 @@ label {
     color: var(--ns-dark-blue);
 }
 
-input {
+input, select, option {
     border-style: none;
     border-width: 1px;
     border-radius: 4px;
@@ -91,6 +166,32 @@ input {
     background-color: var(--ns-background-gray);
     width: 100%;
     height: 3.5em;
+}
+
+option {
+  display: flex;
+  justify-content: flex-start;
+  background: #eeeeee;
+  padding: 1em;
+  transition: 0.4s;
+}
+
+option:first-of-type {
+  border-radius: 8px 8px 0 0;
+}
+
+option:last-of-type {
+  border-radius: 0 0 8px 8px;
+}
+
+option:nth-of-type(odd) {
+  background: white;
+}
+
+option:hover,
+option:focus {
+  background-color: var(--ns-light-blue);
+  color: white;
 }
 
 form {
@@ -105,15 +206,31 @@ fieldset fieldset {
     margin-left: 1em;
     margin-right: 1em;
     padding: 1em;
-    border-radius: 5px;
+    border-radius: 2px;
     transition: opacity 0.3s ease;
-    box-shadow: 3px 0 0 0 var(--ns-yellow);
+    /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
+    box-shadow: 0 .125rem 0 0 rgba(7, 7, 33, .15);
+}
+
+fieldset fieldset:has(input[type='text']){
+    /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
+    box-shadow: 8px 0px 0px -3px var(--ns-light-blue) inset;
 }
 
 /* MARK: Form elements, specific types  */
 label:has(input[type="radio"]) {
     display: inline-flex;
     width: 49%;
+    border: 1px solid var(--ns-dark-blue);
+}
+
+label:has(input[type="radio"]):hover {
+    cursor: pointer;
+}
+
+#geenExecuteur label:has(input[type="radio"]), #welExecuteur label:has(input[type="radio"]) {
+    display: inline-flex;
+    width: 100%;
     border: 1px solid var(--ns-dark-blue);
 }
 
@@ -133,11 +250,23 @@ input[type="checkbox"] {
     color: var(--text-color);
 }
 
-label:has(input[required])::before {
+input[type="checkbox"]:checked{
+    color: var(--text-color);
+    background-color: var(--invalid-color);
+    width: 1em;
+    height: 1em;
+}
+
+label:has(input[required])::before, select[required]::before {
     content: " *";
     color: var(--required-not-filled);
     position: absolute;
     margin-left: -10px;
+}
+
+#geenExecuteur label:has(input[required][type="radio"])::before {
+    margin-left: -25px;
+    margin-top: -15px;
 }
 
 label:has(input[required][type="radio"])::before {
@@ -145,24 +274,26 @@ label:has(input[required][type="radio"])::before {
     margin-top: -55px;
 }
 
-input[type="text"]:invalid:not(:placeholder-shown) {
+label:has(input[type="text"]:optional)::before {
+ content: " (Optioneel)";
+ position: absolute;
+ margin-top: -1.2em;
+ color: #989898;
+ font-size: 0.8em;
+}
+
+label:has(input[value="alleenMijzelf"]){
+    margin-bottom: 2em;
+}
+
+input[type="text"]:user-invalid {
     color: var(--text-color);
-    background-color: var(--invalid-color);
     width: 100%;
+    border: 2px solid var(--required-not-filled);
 }
 
-input:valid:not(:placeholder-shown) {
+input:user-valid {
     border: 2px solid var(--ns-button-green);
-    width: 100%;
-}
-
-input:valid::before {
-    display: inline-block;
-    content: " ✔";
-    color: var(--ns-button-green);
-    font-size: 1em;
-    position: absolute;
-    margin-left: -30px;
 }
 
 body:has(input[name="testament"][value="nee"]:checked) #NederlandWonend,
@@ -172,7 +303,10 @@ body:has(input[name="getrouwd"][value="ja"]:checked) #notariëleField,
 body:has(input[name="testament"][value="ja"]:checked) #notarisInfo,
 body:has(input[name="nummerKeuze"][value="BSN"]:checked) label:has(input[name="BSNGemachtigde"]) ,
 body:has(input[name="nummerKeuze"][value="Becon"]:checked) label:has(input[name="BeconNummer"]) ,
-body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="protoColnummer"]) {
+body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="protoColnummer"]), 
+body:has(input[name="executeurAanwezig"][value="ja"]:checked) #welExecuteur,
+body:has(input[name="executeurAanwezig"][value="nee"]:checked) #geenExecuteur,
+body:has(input[name="GeenAangifteVerkrijgers"][value="ja"]:checked) #VerkrijgersZonderAangifte {
     opacity: 1;
     transition: opacity 0.3s ease, max-height 0.5s ease-out;
     pointer-events: all;
@@ -186,19 +320,36 @@ body:has(input[name="getrouwd"][value="nee"]:checked) #notariëleField,
 body:has(input[name="testament"][value="nee"]:checked) #notarisInfo,
 body:has(input[name="nummerKeuze"][value="BSN"]:checked) label:has(input[name="BeconNummer"],input[name="protoColnummer"]) ,
 body:has(input[name="nummerKeuze"][value="Becon"]:checked) label:has(input[name="BSNGemachtigde"],input[name="protoColnummer"]) ,
-body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="BSNGemachtigde"],input[name="BeconNummer"]) {
+body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="BSNGemachtigde"],input[name="BeconNummer"]),
+body:has(input[name="executeurAanwezig"][value="ja"]:checked) #geenExecuteur,
+body:has(input[name="executeurAanwezig"][value="nee"]:checked) #welExecuteur,
+body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #VerkrijgersZonderAangifte {
     opacity: 0;
     pointer-events: none;
     max-height: 0;
     transition: opacity 0.1s ease, max-height 0.5s ease-out;
     padding: 0;
+    cursor: not-allowed;
 }
 
 /* MARK: Gesloten Elementen */
-.activeJs fieldset:has(:invalid)>div:has(p), .activeJs fieldset:has(:invalid)>div:has(legend), label:has(input[class="nummerGemachtigde"]) {
+.activeJs fieldset:has(:indeterminate)>div:has(p), .activeJs fieldset:has(:indeterminate)>div:has(legend), label:has(input[class="nummerGemachtigde"]), .activeJs fieldset:has(:indeterminate)>div:has(button) {
     opacity: 0.3;
     transition: opacity 0.3s ease;
     pointer-events: none;
+}
+
+.activeJs .verkrijgersZonderJS {
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    padding: 0;
+}
+
+.verkrijgersZonderJS {
+    opacity: 1;
+    pointer-events: all;
+    max-height: fit-content;
 }
 
 /* MARK: Verborgen Elementen */
@@ -210,7 +361,9 @@ body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[na
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: opacity 0.3s, max-height 0.3s;
+    pointer-events: none;
+    display: block; /* Moet op block staan om max-height transition te laten werken */
+    transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
 .hidden-fieldset.show {
@@ -264,12 +417,47 @@ body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[na
     border-top: 2px solid var(--ns-gray);
 }
 
-.pagination button {
+.pagination button, input[type="submit"], #nieuweVerkrijgerButton, #verwijderVerkrijgerButton {
     width: 6em;
     height: 3em;
-    border: 1px solid var(--ns-dark-blue);
     border-radius: 4px;
+    border-style: none;
+    color: var(--white);
+    background-color: var(--ns-light-blue);
+    /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
+    box-shadow: inset 0 -.125rem 0 var(--ns-blue);
+    transition: 0.1s ease-out;
+}
+
+.pagination button:hover, input[type="submit"]:hover, #nieuweVerkrijgerButton:hover, #verwijderVerkrijgerButton:hover {
+    box-shadow: inset 0 -3rem 0 var(--ns-blue);
+    transition: 0.1s ease-in;
+}
+
+#verwijderVerkrijgerButton{
+    margin-top: 1em;
+    width: fit-content;
+    background-color: var(--ns-red);
+    box-shadow: inset 0 -.125rem 0 var(--ns-dark-red);
+}
+
+#nieuweVerkrijgerButton{
+    display: flex;
+    width: auto;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+input[type="submit"]{
+    background-color: var(--ns-yellow);
+    box-shadow: inset 0 -.125rem 0 var(--ns-dark-yellow);
     color: var(--ns-dark-blue);
+    grid-column: 2;
+    margin: 1em;
+}
+
+input[type="submit"]:hover{
+    box-shadow: inset 0 -3rem 0 var(--ns-dark-yellow);
 }
 
 /* MARK: Media queries */
@@ -287,7 +475,7 @@ body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[na
 
     .pagina {
         display: grid;
-        grid-template-columns: 7em 1fr 7em;
+        grid-template-columns: 4em 1fr 4em;
     }
 
     .first-three {
