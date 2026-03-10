@@ -103,3 +103,62 @@ Naast deze doelen heb ik verder gewerkt aan de derde pagina, hier moet je nameli
 <br><br>
 Morgen ga ik werken aan wat simpele styling voor de website, ik wil het logo maken met een svg en deze van kleur laten veranderen op hover. Ik wil wat kleine details toevoegen om het meer als een NS website te laten voelen, en ik wil het dynamisch toevoegen van verkrijgers verbeteren.
 
+## 10/03/2026
+- 09:30 Weekly Nerd
+- 10:30 Zelfstandig werken
+- 12:30 Pauze
+- 13:15 Weer zelfstandig doorwerken
+- 16:00 Checkout
+
+Gesprek met:
+Vandaag was een wat minder productieve dag als het gaat om nieuwe onderdelen. Vandaag heb ik mij meer gefocust op kleine details. Ik ben verder fewerkt met het verbeteren van het toevoegen van meerdere verkrijgers. Dit systeem had nog een paar kleine foutjes zoals:
+Als je een nieuwe verkrijger (bijvoorbeeld 2) toevoegt en dan weer verwijdert, dan is het volgende nieuwe nummer 3, ondanks dat nummer 2 is verwijderd. Dit is nu gefixt dor constant te checken hoeveel verkrijgers er aanwezig zijn.
+<img width="864" height="158" alt="image" src="https://github.com/user-attachments/assets/71a83493-6091-433b-a6f5-3473b0c89ae5" />
+<br><br>
+
+Naast deze verbeterde functie heb ik de stijl van mijn website omgegooid naar een modernere en meer accurate stijl. Mijn eerste stijl had veel geel, maar dit viel (persoonlijk) niet goed op het oog. Dus heb ik de meer witte website van NS zelf aangehouden.
+<br>
+
+// Oud
+<br>
+<img width="946" height="450" alt="image" src="https://github.com/user-attachments/assets/825144b3-ad7f-4dc6-abfb-e41becd8aafe" />
+
+<br>
+// Nieuw
+<br>
+<img width="790" height="450" alt="image" src="https://github.com/user-attachments/assets/dd0ecb43-ab1c-48f3-8dfb-d6b66ceea629" />
+<br><br>
+
+Daarna heb ik wat kleine details verwerkt. Het logo boven aan de website is nu een `<svg>` inplaats van een `<img>`. Door deze verandering kan ik het logo niet alleen dynamisch maken met de website, maar heb ik er nu ook interactie aan toegevoegd met `:hover` 
+<br>
+// Zonder hover
+<br>
+<img width="574" height="228" alt="image" src="https://github.com/user-attachments/assets/2504127b-cb0b-4276-b63f-885852e32e61" />
+<br>
+
+// Met Hover
+<br>
+<img width="574" height="228" alt="image" src="https://github.com/user-attachments/assets/14a2a264-90c8-4cf7-8810-f2d1e347b643" />
+<br><br>
+
+En als laatste heb ik de waarschuwing van de website veranderd van de eerste grote `<h1>` text naar een nu mooie gedeelte van de website zoals het op de officiele NS pagina staat
+<br>
+// Oud
+<br>
+<img width="715" height="151" alt="image" src="https://github.com/user-attachments/assets/7a5f1df7-875f-47bb-b316-1ff13c64dba4" />
+
+<br>
+// Nieuw
+<br>
+<img width="715" height="151" alt="image" src="https://github.com/user-attachments/assets/e8e0d743-57db-4ace-a383-52c62c2641b5" />
+
+<br><br>
+// Officieel
+<br>
+<img width="500" height="151" alt="image" src="https://github.com/user-attachments/assets/149f63d0-f9cc-4d7d-a233-163e26f0cacc" />
+
+
+
+
+
+
