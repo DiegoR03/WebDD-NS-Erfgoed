@@ -156,6 +156,10 @@ En als laatste heb ik de waarschuwing van de website veranderd van de eerste gro
 // Officieel
 <br>
 <img width="500" height="151" alt="image" src="https://github.com/user-attachments/assets/149f63d0-f9cc-4d7d-a233-163e26f0cacc" />
+<br><br>
+Voor volgende week:
+Landcodes fixen, op dit moment zijn het dubbele letters, maar het moeten er 3 zijn
+Transition op het logo als hij van kleur veranderd.
 
 
 
