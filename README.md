@@ -161,6 +161,17 @@ Voor volgende week:
 Landcodes fixen, op dit moment zijn het dubbele letters, maar het moeten er 3 zijn
 Transition op het logo als hij van kleur veranderd.
 
+## 13/03/2026
+- 09:30 Gesprek met Vasilis
+
+Uitleg:
+<br>Ik heb vandaag mijn voortgangsgesprek gehad met Vasislis. Hij zag er zeer tevreden uit en was blij met de kleine details op mijn pagina. Ik heb hem alle drie de pagina's laten zien en hij had een paar tips wwaar ik mij volgende week op kan focussen. IK zal iets meer moeten kijken naar detail, sommige teksten/titels hebben veel witruimte of staan net niet goed in hun vakken. Deze kleine details zijn voornamelijk CSS probleme. Vasilis gaf ook aan dat ik nu eerst moest kijken naar detail en opmaak voordat ik nieuwe elementen en functies ga toevoegen. 
+<br><br>
+Doelen:
+- CSS problemen oplossen
+- Toevoegen van verkrijgers op pagina 3 anders neerzetten, staat nu bovenaan de pagina, maar doe het onderaan.
+- Teksten en h1/h2 minder witruimte geven
+
 
 
 
