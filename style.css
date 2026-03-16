@@ -8,13 +8,18 @@
     --ns-gray: #cfcfcf;
     --ns-light-gray: #f2f2f2;
     --ns-button-green: #00aa89;
-    --ns-background-gray: #e6e6e9;
+    --ns-background: #e6e6e9;
+    --ns-input-background: #e6e6e9;
+    --ns-fieldset-background: #ffffff;
     --ns-red: #D90029;
     --ns-dark-red: #650012;
     --ns-border: #c3c3c3;
+    --ns-warning-text: #003082;
+    --ns-h4: #003083;
     --text-color: #ffffff;
     --required-not-filled: #ff0000;
     --invalid-color: rgba(255, 0, 0, 0.397);
+    --optional-gray: #989898;
 }
 
 * {
@@ -28,18 +33,21 @@
     src: url(fonts/Roboto.ttf);
 }
 
-h2,
-#pageIndex {
-    padding: 0.5em;
+h2 {
+    padding-left: 0.5em;
+    color: var(--ns-dark-blue);
+    margin: 0;
+    margin-top: 1em;
 }
 
-header {
-    margin: auto;
+h4 {
+    color: var(--ns-h4);
+}
+
+#pageIndex {
+    padding: 0.5em;
     color: var(--ns-dark-blue);
-    background-color: var(--ns-yellow);
-    /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .03), 0 10px 20px rgba(0, 0, 0, .04);
-    z-index: 1;
+
 }
 
 legend,
@@ -48,49 +56,61 @@ p {
     font-size: 1.1em;
     font-weight: 500;
     padding: 0.1em;
-    padding-top: 1em;
+    padding-top: 3em;
     text-align: left;
 }
 
+p {
+    padding-top: 1em;
+}
+
+li {
+    color: var(--ns-dark-blue);
+    font-size: 1.1em;
+}
+
 /* MARK: Header elements */
+/* NS logo boven aan te website */
 .ns-logo-vak {
-  width: 150px;
-  height: 100px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
+    width: 150px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .ns-svg {
-  width: 100%;
-  max-width: 150px; 
-  height: auto;
-  fill: var(--ns-dark-blue);
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    fill: var(--ns-dark-blue);
+    transition: fill 0.3s ease;
 }
 
-.logo-button{
+.logo-button {
     background-color: transparent;
     border: none;
 }
 
 .logo-button:hover .ns-svg {
     fill: var(--ns-yellow);
-    transition: fill 0.1s ease; 
+    transition: fill 0.3s ease;
 }
 
-.waarschuwing-container {
+/* Warning container: Om aan te geven dat het voor een schoolopdracht is en om het meer het gevoel te geven dat get voor een schoolopdracht is. */
+.warning-container {
     width: 100%;
     border-top: 1px solid var(--ns-gray);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.waarschuwing-rij {
+.warning-row {
     display: flex;
-    align-items: center; 
+    align-items: center;
     background-color: var(--ns-light-gray);
     padding: 0.75em 1.2em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
@@ -100,19 +120,25 @@ p {
     fill: var(--required-not-filled);
     margin-left: 1.5em;
     /* Flex shrink https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-shrink */
-    flex-shrink: 0; 
+    flex-shrink: 0;
+    transition: 3s;
 }
 
-.waarschuwing-tekst {
+.warning-text, .warning-text-important  {
     margin: 0;
     padding: 0.5em;
     font-size: 1em;
     font-weight: 400;
-    color: var(--ns-dark-blue);
+    color: var(--ns-warning-text);
 }
 
-.waarschuwing-pijl {
-    color: var(--ns-dark-blue);
+.warning-text-important {
+    color: var(--ns-red);
+    font-weight: 600;
+}
+
+.warning-arrow {
+    color: var(--ns-warning-text);
     font-size: 1.5em;
     line-height: 0;
     padding-bottom: 4px;
@@ -120,7 +146,7 @@ p {
 
 /* MARK: Body elements */
 body {
-    background-color: var(--ns-background-gray);
+    background-color: var(--ns-background);
     margin: auto;
 }
 
@@ -129,8 +155,10 @@ header {
     align-items: center;
     justify-content: center;
     padding: 0.5em 1em;
-    background-color: var(--white);
+    background-color: var(--ns-fieldset-background);
     box-shadow: 0 .125rem 0 0 rgba(7, 7, 33, .15);
+    margin: auto;
+    z-index: 1;
 }
 
 header h1 {
@@ -153,45 +181,47 @@ label {
     border-width: 1px;
     border-color: var(--ns-border);
     border-radius: 4px;
-    background-color: var(--white);
+    background-color: var(--ns-fieldset-background);
     color: var(--ns-dark-blue);
 }
 
-input, select, option {
+input,
+select,
+option {
     border-style: none;
     border-width: 1px;
     border-radius: 4px;
     outline: none;
     padding: 10px;
-    background-color: var(--ns-background-gray);
+    background-color: var(--ns-input-background);
     width: 100%;
     height: 3.5em;
+    color: var(--optional-gray);
 }
 
 option {
-  display: flex;
-  justify-content: flex-start;
-  background: #eeeeee;
-  padding: 1em;
-  transition: 0.4s;
+    display: flex;
+    justify-content: flex-start;
+    padding: 1em;
+    transition: 0.4s;
 }
 
 option:first-of-type {
-  border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
 }
 
 option:last-of-type {
-  border-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
 }
 
 option:nth-of-type(odd) {
-  background: white;
+    background: var(--ns-fieldset-background);
 }
 
 option:hover,
 option:focus {
-  background-color: var(--ns-light-blue);
-  color: white;
+    background-color: var(--ns-light-blue);
+    color: white;
 }
 
 form {
@@ -202,17 +232,18 @@ form {
 
 fieldset fieldset {
     border-style: none;
-    background-color: var(--white);
+    background-color: var(--ns-fieldset-background);
     margin-left: 1em;
     margin-right: 1em;
     padding: 1em;
+    margin-top: -1em;
     border-radius: 2px;
     transition: opacity 0.3s ease;
     /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
     box-shadow: 0 .125rem 0 0 rgba(7, 7, 33, .15);
 }
 
-fieldset fieldset:has(input[type='text']){
+fieldset fieldset:has(input[type='text']) {
     /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
     box-shadow: 8px 0px 0px -3px var(--ns-light-blue) inset;
 }
@@ -224,11 +255,13 @@ label:has(input[type="radio"]) {
     border: 1px solid var(--ns-dark-blue);
 }
 
-label:has(input[type="radio"]):hover {
+label:has(input[type="radio"]):hover, label:has(input[type="checkbox"]) {
     cursor: pointer;
 }
 
-#geenExecuteur label:has(input[type="radio"]), #welExecuteur label:has(input[type="radio"]) {
+#geenExecuteur label:has(input[type="radio"]),
+#welExecuteur label:has(input[type="radio"]),
+label:has(input[name="aanslagErfbelastingSturen"]) {
     display: inline-flex;
     width: 100%;
     border: 1px solid var(--ns-dark-blue);
@@ -239,25 +272,13 @@ label:has(input[type="radio"]:checked) {
     color: var(--text-color);
 }
 
-input[type="radio"] {
+input[type="radio"], input[type="checkbox"] {
     display: none;
 }
 
-input[type="checkbox"] {
-    width: 1em;
-    height: 1em;
-    accent-color: var(--ns-button-green);
-    color: var(--text-color);
-}
 
-input[type="checkbox"]:checked{
-    color: var(--text-color);
-    background-color: var(--invalid-color);
-    width: 1em;
-    height: 1em;
-}
-
-label:has(input[required])::before, select[required]::before {
+label:has(input[required])::before,
+label:has(select[required])::before {
     content: " *";
     color: var(--required-not-filled);
     position: absolute;
@@ -274,26 +295,50 @@ label:has(input[required][type="radio"])::before {
     margin-top: -55px;
 }
 
+/* Optioneel */
 label:has(input[type="text"]:optional)::before {
- content: " (Optioneel)";
- position: absolute;
- margin-top: -1.2em;
- color: #989898;
- font-size: 0.8em;
+    content: " (Optioneel)";
+    position: absolute;
+    margin-top: -1.2em;
+    color: var(--optional-gray);
+    font-size: 0.8em;
 }
 
-label:has(input[value="alleenMijzelf"]){
+label:has(input[value="alleenMijzelf"]) {
     margin-bottom: 2em;
 }
 
+/* Invalid user input */
 input[type="text"]:user-invalid {
-    color: var(--text-color);
+    color: var(--ns-dark-red);
     width: 100%;
     border: 2px solid var(--required-not-filled);
 }
 
+label:has(input[type="text"]:user-invalid):after {
+    content: "Incorrect input";
+    color: var(--ns-red);
+    font-size: .8em;
+}
+
+label:has(input[name="BSN"]:user-invalid):after {
+    content: "Input needs 9 characters";
+    color: var(--ns-red);
+    font-size: .8em;
+}
+/* Valid user input*/
 input:user-valid {
     border: 2px solid var(--ns-button-green);
+    color: var(--ns-dark-blue);
+    padding-left: 1.5em;
+}
+
+label:has(input[type="text"]:user-valid):before {
+    content: "✔";
+    color: var(--ns-button-green);
+    margin-top: 2.6em;
+    margin-left: 0.5em;
+    font-size: .8em;
 }
 
 body:has(input[name="testament"][value="nee"]:checked) #NederlandWonend,
@@ -301,16 +346,19 @@ body:has(input[name="testament"][value="ja"]:checked) #buitenLandWonend,
 body:has(input[name="kinderen"][value="ja"]:checked) #eerderOverledenField,
 body:has(input[name="getrouwd"][value="ja"]:checked) #notariëleField,
 body:has(input[name="testament"][value="ja"]:checked) #notarisInfo,
-body:has(input[name="nummerKeuze"][value="BSN"]:checked) label:has(input[name="BSNGemachtigde"]) ,
-body:has(input[name="nummerKeuze"][value="Becon"]:checked) label:has(input[name="BeconNummer"]) ,
-body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="protoColnummer"]), 
+body:has(input[name="nummerKeuze"][value="BSN"]:checked) label:has(input[name="BSNGemachtigde"]),
+body:has(input[name="nummerKeuze"][value="Becon"]:checked) label:has(input[name="BeconNummer"]),
+body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="protoColnummer"]),
 body:has(input[name="executeurAanwezig"][value="ja"]:checked) #welExecuteur,
 body:has(input[name="executeurAanwezig"][value="nee"]:checked) #geenExecuteur,
-body:has(input[name="GeenAangifteVerkrijgers"][value="ja"]:checked) #VerkrijgersZonderAangifte {
+body:has(input[name="GeenAangifteVerkrijgers"][value="ja"]:checked) #VerkrijgersZonderAangifte, 
+body:has(input[name="GeenAangifteVerkrijgers"][value="ja"]:checked) #nieuweVerkrijgerButton,
+body:has(input[name="executeurOfGemachtigde"][value="ja"]:checked) #gegevensExecuteur{
     opacity: 1;
     transition: opacity 0.3s ease, max-height 0.5s ease-out;
     pointer-events: all;
     max-height: fit-content;
+    visibility: visible;
 }
 
 body:has(input[name="testament"][value="ja"]:checked) #NederlandWonend,
@@ -318,13 +366,16 @@ body:has(input[name="testament"][value="nee"]:checked) #buitenLandWonend,
 body:has(input[name="kinderen"][value="nee"]:checked) #eerderOverledenField,
 body:has(input[name="getrouwd"][value="nee"]:checked) #notariëleField,
 body:has(input[name="testament"][value="nee"]:checked) #notarisInfo,
-body:has(input[name="nummerKeuze"][value="BSN"]:checked) label:has(input[name="BeconNummer"],input[name="protoColnummer"]) ,
-body:has(input[name="nummerKeuze"][value="Becon"]:checked) label:has(input[name="BSNGemachtigde"],input[name="protoColnummer"]) ,
-body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="BSNGemachtigde"],input[name="BeconNummer"]),
+body:has(input[name="nummerKeuze"][value="BSN"]:checked) label:has(input[name="BeconNummer"], input[name="protoColnummer"]),
+body:has(input[name="nummerKeuze"][value="Becon"]:checked) label:has(input[name="BSNGemachtigde"], input[name="protoColnummer"]),
+body:has(input[name="nummerKeuze"][value="Protocol"]:checked) label:has(input[name="BSNGemachtigde"], input[name="BeconNummer"]),
 body:has(input[name="executeurAanwezig"][value="ja"]:checked) #geenExecuteur,
 body:has(input[name="executeurAanwezig"][value="nee"]:checked) #welExecuteur,
-body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #VerkrijgersZonderAangifte {
+body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #VerkrijgersZonderAangifte,
+body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #nieuweVerkrijgerButton,
+body:has(input[name="executeurOfGemachtigde"][value="nee"]:checked) #gegevensExecuteur {
     opacity: 0;
+    visibility:hidden;
     pointer-events: none;
     max-height: 0;
     transition: opacity 0.1s ease, max-height 0.5s ease-out;
@@ -332,8 +383,43 @@ body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #Verkrijger
     cursor: not-allowed;
 }
 
+/* Canvas voor handtekening */
+.signature-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em; 
+    margin-top: -3em;
+    padding: 1em;
+    background-color: var(--ns-fieldset-background);
+    box-shadow: 0 .125rem 0 0 rgba(7, 7, 33, .15);
+}
+
+#signatureCanvas {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--ns-border);
+    background: white;
+    cursor: crosshair;
+    margin-top: -1em;
+    touch-action: none;
+    border-radius: 5px;
+}
+
+.signature-button {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#clearSignature:hover {
+    box-shadow: inset 0 -3rem 0 var(--ns-dark-red);
+}
+
 /* MARK: Gesloten Elementen */
-.activeJs fieldset:has(:indeterminate)>div:has(p), .activeJs fieldset:has(:indeterminate)>div:has(legend), label:has(input[class="nummerGemachtigde"]), .activeJs fieldset:has(:indeterminate)>div:has(button) {
+.activeJs fieldset:has(:indeterminate)>div:has(p),
+.activeJs fieldset:has(:indeterminate)>div:has(legend),
+label:has(input[class="nummerGemachtigde"]),
+.activeJs fieldset:has(:indeterminate)>div:has(button),
+#nieuweVerkrijgerButton {
     opacity: 0.3;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -341,6 +427,7 @@ body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #Verkrijger
 
 .activeJs .verkrijgersZonderJS {
     opacity: 0;
+    visibility:hidden;
     pointer-events: none;
     max-height: 0;
     padding: 0;
@@ -350,6 +437,7 @@ body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #Verkrijger
     opacity: 1;
     pointer-events: all;
     max-height: fit-content;
+    visibility: visible;
 }
 
 /* MARK: Verborgen Elementen */
@@ -359,15 +447,73 @@ body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #Verkrijger
 
 .hidden-fieldset {
     opacity: 0;
+    visibility:hidden;
     max-height: 0;
     overflow: hidden;
     pointer-events: none;
-    display: block; /* Moet op block staan om max-height transition te laten werken */
+    display: block;
+    /* Moet op block staan om max-height transition te laten werken */
     transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
 .hidden-fieldset.show {
     opacity: 1;
+    visibility: visible;
+}
+
+/* Als de checkbox in de sectie gechecked is, toon de content */
+#uitlegSection {    
+    padding: 1em;
+    display: grid;
+    background: var(--ns-yellow)
+}
+
+#uitlegContent {
+    opacity: 0;
+    visibility:hidden;
+    pointer-events: none;
+    max-height: 0;
+    padding: 0;
+    cursor: not-allowed;
+    transition: opacity 1s ease, max-height 1s ease-in;
+}
+
+#uitlegSection:has(input:checked) div#uitlegContent {
+    padding-left: 1em;
+    max-height: fit-content;
+    background: var(--ns-yellow);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, max-height 1s ease-in;
+}
+
+#uitlegSection label, #uitlegContent, #uitlegSection h2{
+    grid-column: 2;
+}
+
+#uitlegSection label {
+    margin-top: 1em;
+    background: none;
+}
+
+#uitlegSection label:before{
+    content:"►";
+}
+
+#uitlegSection:has(input:checked) label:before {
+    content: "▼";
+}
+
+#uitlegSection p {
+    padding: 0;
+}
+
+#uitlegSection h4 {
+    margin-top: 2em;
+    margin-bottom: -0.2em;
+    padding: 0;
+    color: var(--ns-light-blue);
+    font-weight:bolder;
 }
 
 /* MARK: Pagination */
@@ -378,11 +524,11 @@ body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #Verkrijger
     position: relative;
 }
 
-.pagination {
+footer {
     display: none;
 }
 
-.activeJs .pagination {
+.activeJs footer {
     display: flex;
 }
 
@@ -405,7 +551,7 @@ body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #Verkrijger
     border-style: none;
 }
 
-.activeJs .pagination {
+.activeJs footer {
     display: flex;
     position: relative;
     align-items: center;
@@ -413,11 +559,16 @@ body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #Verkrijger
     gap: 1em;
     padding: 1em;
     color: var(--ns-dark-blue);
-    background-color: var(--white);
+    background-color: var(--ns-fieldset-background);
     border-top: 2px solid var(--ns-gray);
+    margin-top: 1em;
 }
 
-.pagination button, input[type="submit"], #nieuweVerkrijgerButton, #verwijderVerkrijgerButton {
+footer button,
+input[type="submit"],
+#nieuweVerkrijgerButton,
+#verwijderVerkrijgerButton,
+#clearSignature {
     width: 6em;
     height: 3em;
     border-radius: 4px;
@@ -429,26 +580,29 @@ body:has(input[name="GeenAangifteVerkrijgers"][value="nee"]:checked) #Verkrijger
     transition: 0.1s ease-out;
 }
 
-.pagination button:hover, input[type="submit"]:hover, #nieuweVerkrijgerButton:hover, #verwijderVerkrijgerButton:hover {
+footer button:hover,
+input[type="submit"]:hover,
+#nieuweVerkrijgerButton:hover,
+#verwijderVerkrijgerButton:hover {
     box-shadow: inset 0 -3rem 0 var(--ns-blue);
     transition: 0.1s ease-in;
 }
 
-#verwijderVerkrijgerButton{
+#verwijderVerkrijgerButton, #clearSignature {
     margin-top: 1em;
     width: fit-content;
     background-color: var(--ns-red);
     box-shadow: inset 0 -.125rem 0 var(--ns-dark-red);
 }
 
-#nieuweVerkrijgerButton{
+#nieuweVerkrijgerButton {
     display: flex;
     width: auto;
     padding: 1em;
-    margin-top: 2em;
+    margin-top: 0.4em;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     background-color: var(--ns-yellow);
     box-shadow: inset 0 -.125rem 0 var(--ns-dark-yellow);
     color: var(--ns-dark-blue);
@@ -456,7 +610,7 @@ input[type="submit"]{
     margin: 1em;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     box-shadow: inset 0 -3rem 0 var(--ns-dark-yellow);
 }
 
@@ -465,7 +619,8 @@ input[type="submit"]:hover{
 
     h1,
     h2,
-    p {
+    p,
+    ul {
         grid-column: 2;
     }
 
@@ -477,6 +632,12 @@ input[type="submit"]:hover{
         display: grid;
         grid-template-columns: 4em 1fr 4em;
     }
+
+    #uitlegSection {    
+    grid-template-columns: 4em 1fr 4em;
+    }
+
+
 
     .first-three {
         display: flex;
@@ -509,5 +670,106 @@ input[type="submit"]:hover{
 @media (max-width: 465px) {
     label:has(input[type="radio"]) {
         width: 100%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --white: #ffffff;
+        --ns-yellow: #ffc917;
+        --ns-dark-yellow: #ffb519;
+        --ns-dark-blue: #5ba5fc;
+        --ns-blue: #004ba0;
+        --ns-light-blue: #0063d3;
+        --ns-gray: #3c3d41;
+        --ns-light-gray: #1a1b1d;
+        --ns-input-background: #1a1b1d;
+        --ns-fieldset-background: #27282a;
+        --ns-button-green: #00aa89;
+        --ns-background: #1a1b1d;
+        --ns-red: #D90029;
+        --ns-dark-red: #650012;
+        --ns-border: #c3c3c3;
+        --text-color: #ffffff;
+        --ns-h4: #ffffff;
+        --ns-warning-text: #ffffff;
+        --required-not-filled: #ff0000;
+        --invalid-color: rgba(255, 0, 0, 0.397);
+        --optional-gray: #989898;
+    }
+
+    #uitlegSection, #uitlegSection:has(input:checked) div#uitlegContent {
+    background:var(--ns-fieldset-background);
+    }   
+
+    .warning-row {
+        border-bottom: 1px solid var(--ns-gray);
+    }
+
+    .warning-container {
+        width: 100%;
+        border-top: 1px solid var(--ns-gray);
+    }
+
+    .warning-svg {
+        color: var(--ns-red)
+    }
+}
+
+
+/* Vraag aan Gemini: rare vraag, maar ik wil window.print(); doen, maar dan zonder een specifieke ID, hoe kan ik het zo maken dat hij wel correct print zonder de "huidige" pagina te pakken */
+/* Antwoord: Gebruik @media print in CSS (De meest "CSS" manier). Dit is vaak de makkelijkste methode. Je gebruikt nog steeds de normale window.print(), maar je vertelt de browser via CSS dat hij alles moet verbergen behalve wat jij wilt zien op papier. Omdat je geen classes mag gebruiken, doen we dit op basis van tags: */
+/* Vraag: Ik heb geprobeert deze code toe te passen, maar sommige onderdelen zijn ontzichtbaar, wat gaat er fout? *Gedeelte van de code toegevoegd* */
+/* Antwoord: Deze code ziet er heel goed uit, je bent er bijna! In CSS is de gouden regel: de meest specifieke selector wint. Omdat jij in je normale code al heel krachtige en specifieke selectors gebruikt (zoals .activeJs fieldset:has(:indeterminate) > div), is een simpele regel in @media print vaak niet "sterk" genoeg om die te overrulen. Daarom voegen wij !important toe om deze code te overschrijven.*/
+@media print {
+    .activeJs fieldset:has(:indeterminate) > div:has(p),
+    .activeJs fieldset:has(:indeterminate) > div:has(legend),
+    .activeJs fieldset:has(:indeterminate) > div:has(button),
+    .activeJs #nieuweVerkrijgerButton {
+        opacity: 1 !important;
+        pointer-events: all !important;
+        background: none !important;
+    }
+
+    .activeJs .pagina {
+        position: relative !important;
+        opacity: 1 !important;
+        height: auto !important;
+        overflow: visible !important;
+        display: block !important;
+        pointer-events: all !important;
+    }
+
+    .activeJs footer {
+        display: none !important;
+    }
+
+    .activeJs #uitlegContent {
+        opacity: 1 !important;
+        visibility: visible !important; 
+        max-height: fit-content !important;
+        display: block !important;
+    }
+
+    body.activeJs {
+        background-color: white !important;
+        margin: 0 !important;
+    }
+
+    .activeJs .verkrijgersZonderJS {
+        opacity: 1 !important;
+        max-height: fit-content !important;
+        pointer-events: all !important;
+        padding: 1em !important;
+    }
+
+    body.activeJs .verkrijgersZonderJS, 
+    body.activeJs #VerkrijgersZonderAangifte { 
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important; 
+        max-height: none !important; 
+        pointer-events: all !important;
+        padding: 1em !important;
     }
 }
