@@ -172,6 +172,68 @@ Doelen:
 - Toevoegen van verkrijgers op pagina 3 anders neerzetten, staat nu bovenaan de pagina, maar doe het onderaan.
 - Teksten en h1/h2 minder witruimte geven
 
+## 16/02/2026
+- 09:30 Kort gesprek met Vasilis of wij alles nog begrepen van de opdracht
+- 10:00 laatste loodjes voor BT
+- 13:00 Pauze
+- 13:30 Verder zelfstandig werken
+- 16:00 checkout
+
+Gesprek met:
+<br>Vandaag was een dag voor reparatie. Ik heb mij eerst gefocust op het verbeteren van de witruimte tussen tekst elementen. Ik mijn vorige versie hadden de `<legend>` elementen veel witruimte. Om dit te fixen heb ik gewerkt met `margin-top` en `margin-bototm` zodat ik niet de hele indeling van de pagina hoefde te veranderen:
+<br><br>
+// Oude versie <br>
+<img width="611" height="128" alt="image" src="https://github.com/user-attachments/assets/a9256550-6964-4ee0-95c9-42fd442244eb" />
+<br>
+// Nieuwe versie <br>
+<img width="813" height="165" alt="image" src="https://github.com/user-attachments/assets/cffaca0c-80c1-42de-8c6b-ea9d61a36846" />
+<br><br>
+Daarnaast ben ik verder gaan werken aan de intro pagina van het erfbelasting formulier. In het officiele formulier is de eerste pagina een 'informatie' pagina waar standaarden en voorbereidingen worden aangegeven voordat je begint met het invullen van het document. Dit wilde ik wel op mijn pagina zetten sinds dit een belangrijk onderdeel is.
+<br>
+// Officiele A4 <br>
+<img width="724" height="833" alt="image" src="https://github.com/user-attachments/assets/f28bcadd-fca4-4031-8726-2e628eda83a3" />
+<br>
+// Mijn indeling (Gesloten) <br>
+<img width="1092" height="453" alt="image" src="https://github.com/user-attachments/assets/7b400c01-e51b-4b67-9673-3b6131ce49d8" /> 
+<br>
+// Mijn indeling (Open) <br>
+<img width="1090" height="878" alt="image" src="https://github.com/user-attachments/assets/895faf4b-83fd-4d9a-9170-c7a57ad08604" />
+<br><br>
+Als laatste heb ik de derde pagina afgemaakt, maar op het einde van de derde pagina moet je een handtekening zetten, dus ben ik druk bezig geweest om dit toe te kunnen voegen aan mijn website. Ik wist dat je dit met `<canvas>` kon doen, maar het tekenen zelf was nog ebst pittig, hier had ik hulp bij nodig van het internet. Na het afmaken van de teken functie kwam ik erachter dat het niet responsive is. In dit gevoel bedoel ik hiermee: Als je eerst tekent en daarna de pagina naar beneden schaalt in breedte, dan schaalt de tekening niet mee. Hoewel het nog steeds niet perfect is, is er een vorm van schalen: <br>
+
+// Canvas <br>
+<img width="824" height="474" alt="image" src="https://github.com/user-attachments/assets/cc2477d7-1fcc-4ed2-a4c1-83627f423cc0" />
+<br>
+
+// Canva (Getekent) <br>
+<img width="811" height="466" alt="image" src="https://github.com/user-attachments/assets/cfb67604-f1ae-457a-b7c1-d9617d54166a" />
+<br>
+
+// Canvas code <br>
+// HTML <br><br>
+<img width="634" height="162" alt="image" src="https://github.com/user-attachments/assets/590c8a02-92aa-4e30-8838-82419f7dd3e2" /> <br>
+// CSS <br><br>
+<img width="454" height="606" alt="image" src="https://github.com/user-attachments/assets/ca7a2c99-5713-40c9-84d0-20517f9e1716" /> <br>
+// Javascript <br><br>
+<img width="1480" height="817" alt="image" src="https://github.com/user-attachments/assets/45140307-8d14-4b4e-bec4-2720862e1d58" /> <br>
+<img width="787" height="276" alt="image" src="https://github.com/user-attachments/assets/2d7fc704-84e6-4507-8cb2-3d1e8845ba8d" /> <br><br>
+
+Doel voor morgen:<br>
+Morgen wil ik nog kijken naar de laatste puntjes op de i. Ik wil morgen de helft van de dag focussen op Bt en de andere helft op CSS sinds ik daar nog wel wat andere taken voor heb. Morgen zal een dag zijn voor laatste verbeteren in het design en proberen zo ver mogelijk te komen in pagina's afmaken.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
