@@ -172,6 +172,9 @@ Doelen:
 - Toevoegen van verkrijgers op pagina 3 anders neerzetten, staat nu bovenaan de pagina, maar doe het onderaan.
 - Teksten en h1/h2 minder witruimte geven
 
+## Week overzicht:
+Verassend veel progressie gemaakt. Ik heb mij voornamelijk gefocut op het afmaken en opmaken van de website op een manier dat ik het leesbaar vind. Ik heb het hele thema omgegooid naar een meer wit thema en minder geel. Ik heb de elementen wat netter opgemaakt en beter ingedeelt en wil mij vanaf nu focussen op het afmaken van functies en de laatste puntjes op de i zetten.
+
 ## 16/02/2026
 - 09:30 Kort gesprek met Vasilis of wij alles nog begrepen van de opdracht
 - 10:00 laatste loodjes voor BT
@@ -179,7 +182,7 @@ Doelen:
 - 13:30 Verder zelfstandig werken
 - 16:00 checkout
 
-Gesprek met:
+Gesprek met Joost:
 <br>Vandaag was een dag voor reparatie. Ik heb mij eerst gefocust op het verbeteren van de witruimte tussen tekst elementen. Ik mijn vorige versie hadden de `<legend>` elementen veel witruimte. Om dit te fixen heb ik gewerkt met `margin-top` en `margin-bototm` zodat ik niet de hele indeling van de pagina hoefde te veranderen:
 <br><br>
 // Oude versie <br>
