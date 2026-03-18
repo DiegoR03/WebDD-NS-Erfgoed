@@ -172,6 +172,101 @@ Doelen:
 - Toevoegen van verkrijgers op pagina 3 anders neerzetten, staat nu bovenaan de pagina, maar doe het onderaan.
 - Teksten en h1/h2 minder witruimte geven
 
+## Week overzicht:
+Verassend veel progressie gemaakt. Ik heb mij voornamelijk gefocut op het afmaken en opmaken van de website op een manier dat ik het leesbaar vind. Ik heb het hele thema omgegooid naar een meer wit thema en minder geel. Ik heb de elementen wat netter opgemaakt en beter ingedeelt en wil mij vanaf nu focussen op het afmaken van functies en de laatste puntjes op de i zetten.
+
+## 16/02/2026
+- 09:30 Kort gesprek met Vasilis of wij alles nog begrepen van de opdracht
+- 10:00 laatste loodjes voor BT
+- 13:00 Pauze
+- 13:30 Verder zelfstandig werken
+- 16:00 checkout
+
+Gesprek met Joost:
+<br>Vandaag was een dag voor reparatie. Ik heb mij eerst gefocust op het verbeteren van de witruimte tussen tekst elementen. Ik mijn vorige versie hadden de `<legend>` elementen veel witruimte. Om dit te fixen heb ik gewerkt met `margin-top` en `margin-bototm` zodat ik niet de hele indeling van de pagina hoefde te veranderen:
+<br><br>
+// Oude versie <br>
+<img width="611" height="128" alt="image" src="https://github.com/user-attachments/assets/a9256550-6964-4ee0-95c9-42fd442244eb" />
+<br>
+// Nieuwe versie <br>
+<img width="813" height="165" alt="image" src="https://github.com/user-attachments/assets/cffaca0c-80c1-42de-8c6b-ea9d61a36846" />
+<br><br>
+Daarnaast ben ik verder gaan werken aan de intro pagina van het erfbelasting formulier. In het officiele formulier is de eerste pagina een 'informatie' pagina waar standaarden en voorbereidingen worden aangegeven voordat je begint met het invullen van het document. Dit wilde ik wel op mijn pagina zetten sinds dit een belangrijk onderdeel is.
+<br>
+// Officiele A4 <br>
+<img width="724" height="833" alt="image" src="https://github.com/user-attachments/assets/f28bcadd-fca4-4031-8726-2e628eda83a3" />
+<br>
+// Mijn indeling (Gesloten) <br>
+<img width="1092" height="453" alt="image" src="https://github.com/user-attachments/assets/7b400c01-e51b-4b67-9673-3b6131ce49d8" /> 
+<br>
+// Mijn indeling (Open) <br>
+<img width="1090" height="878" alt="image" src="https://github.com/user-attachments/assets/895faf4b-83fd-4d9a-9170-c7a57ad08604" />
+<br><br>
+Als laatste heb ik de derde pagina afgemaakt, maar op het einde van de derde pagina moet je een handtekening zetten, dus ben ik druk bezig geweest om dit toe te kunnen voegen aan mijn website. Ik wist dat je dit met `<canvas>` kon doen, maar het tekenen zelf was nog ebst pittig, hier had ik hulp bij nodig van het internet. Na het afmaken van de teken functie kwam ik erachter dat het niet responsive is. In dit gevoel bedoel ik hiermee: Als je eerst tekent en daarna de pagina naar beneden schaalt in breedte, dan schaalt de tekening niet mee. Hoewel het nog steeds niet perfect is, is er een vorm van schalen: <br>
+
+// Canvas <br>
+<img width="824" height="474" alt="image" src="https://github.com/user-attachments/assets/cc2477d7-1fcc-4ed2-a4c1-83627f423cc0" />
+<br>
+
+// Canva (Getekent) <br>
+<img width="811" height="466" alt="image" src="https://github.com/user-attachments/assets/cfb67604-f1ae-457a-b7c1-d9617d54166a" />
+<br>
+
+// Canvas code <br>
+// HTML <br><br>
+<img width="634" height="162" alt="image" src="https://github.com/user-attachments/assets/590c8a02-92aa-4e30-8838-82419f7dd3e2" /> <br>
+// CSS <br><br>
+<img width="454" height="606" alt="image" src="https://github.com/user-attachments/assets/ca7a2c99-5713-40c9-84d0-20517f9e1716" /> <br>
+// Javascript <br><br>
+<img width="1480" height="817" alt="image" src="https://github.com/user-attachments/assets/45140307-8d14-4b4e-bec4-2720862e1d58" /> <br>
+<img width="787" height="276" alt="image" src="https://github.com/user-attachments/assets/2d7fc704-84e6-4507-8cb2-3d1e8845ba8d" /> <br><br>
+
+## Week 4
+Deze week heb ik mijn project zo goed als af kunnen maken. Niet alleen heb ik een mooie form kunnen maken, maar de styling is nog heel erg accuraat naar de NS ook! Ik ben super blij met het resultaat dat ik nu heb opgezet. Ik heb een form met veel details en leuke extraa'tjes, maar het geweldige aan deze website is dat het ook werkt zelfs als de javascript het niet doen. Ik heb een fallback gemaakt voor als de laptop (voor wat voor reden dan ook) geen javascript ondersteunt! Tijdens deze korte periode heb ik zo veel geleerd over form element dat ik haast zou kunnen zeggen dat ik begon met dit project als een code beginner, en dat ik nu weg loop met een advanced level, zo een groot evrschil zit erin. Ik bene cht super blij met het resultaat dat ik op heb geleverd en zou het zo nog een keer willen doen! Het enige dat ik jammer vind is dat ik niet mere dat 3 pagina's heb kunnen uitwerken. Het liefst had ik er zo veel mogelijk gemaakt, maar dit is alles dat mogelijk was binnen 4 weken.
+<br>
+De volgende keer wil ik meer functies vanaf het begin maken. Deze keer heb ik alles tegelijkertijd gedaan, maar de volgende keer wil ik eerst heel veel functies klaarzetten en daarna alles mooi maken en klaarzetten.
+
+## Bronnenlijst
+// Links <br>
+- Flex shrink https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-shrink
+- Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html
+- Voor de drawing pad: https://medium.com/@divbydiv/build-a-signature-pad-in-html-css-js-canvas-bd174d999392
+- Tekenen zelf: https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
+- VOor .onbeforeunload: https://stackoverflow.com/questions/3664381/force-page-scroll-position-to-top-at-page-refresh-in-html
+- Max datepicker https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today
+
+// Prompts <br>
+- Vraag aan Gemini: rare vraag, maar ik wil window.print(); doen, maar dan zonder een specifieke ID, hoe kan ik het zo maken dat hij wel correct print zonder de "huidige" pagina te pakken
+- Antwoord: Gebruik @media print in CSS (De meest "CSS" manier). Dit is vaak de makkelijkste methode. Je gebruikt nog steeds de normale window.print(), maar je vertelt de browser via CSS dat hij alles moet verbergen behalve wat jij wilt zien op papier. Omdat je geen classes mag gebruiken, doen we dit op basis van tags: 
+<br><br>
+- Vraag: Ik heb geprobeert deze code toe te passen, maar sommige onderdelen zijn ontzichtbaar, wat gaat er fout? *Gedeelte van de code toegevoegd*.
+- Antwoord: Deze code ziet er heel goed uit, je bent er bijna! In CSS is de gouden regel: de meest specifieke selector wint. Omdat jij in je normale code al heel krachtige en specifieke selectors gebruikt (zoals .activeJs fieldset:has(:indeterminate) > div), is een simpele regel in @media print vaak niet "sterk" genoeg om die te overrulen. Daarom voegen wij !important toe om deze code te overschrijven.
+<br><br>
+- ChatGPT Prompt: Zou je mij kunnen helpen met een filter maken voor de inputs die niet te zien zijn (Door Opacity: 0;?) Ik krijg de filter niet voor elkaar.
+- Antwoord: Je hoeft de opacity niet mee te nemen in de filter! Alleen de pointer events van jouw CSS! Bijvoorbeeld:
+<br><br>
+- Vraag: De pagina herlaadt soms, hoe kan ik dit fixen + [code]
+- Antwoord: Voorkom dat de pagina herlaadt (als de knop in een form staat) met e.preventDefault(); Optioneel kan je ook onderaan de functie de required state herberekenen met de logica van een andere functie die je gebruikt: if (typeof syncRequiredFields === "function") {syncRequiredFields();}
+<br><br>
+- Vraagje aan gemini: Ik heb nu een canvas gemaakt voor mijn form om een handtekening te kunnen zetten, maar deze lijkt niet responsive (als ik al heb getekent, is dit te fixen?)
+- Antwoord: Kleine fix voor je JavaScript: Omdat het canvas nu responsive is via CSS (width: 100%), kan de tekenpositie soms verschuiven als je het venster groter of kleiner maakt. Gebruik deze verbeterde draw functie om dat op te vangen:
+<br><br>
+- ChatGPT: Van GetElementByID naar querySelectorAll.
+- Antwoord: Ik zie het probleem al! Op dit moment roep je de naam 'datePickerID' aan als element en niet als class, verander dit naar .datePickerID. Daarna moet je elke datePicker aanreoepen in de javascript met een forEach.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
