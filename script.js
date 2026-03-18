@@ -152,14 +152,14 @@ document.getElementById("next").addEventListener("click", () => {
             return style.pointerEvents !== "none";
     });
 
-    // inputs.forEach(input => {
-    //     if (!input.checkValidity()) {
-    //         allValid = false;
-    //         input.reportValidity();
-    //     }
-    // });
+    inputs.forEach(input => {
+        if (!input.checkValidity()) {
+            allValid = false;
+            input.reportValidity();
+        }
+    });
 
-    // if (!allValid) return;
+    if (!allValid) return;
 
     if (currentIndex < paginas.length - 1) {
         currentIndex++;

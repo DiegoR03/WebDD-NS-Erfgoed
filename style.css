@@ -410,11 +410,93 @@ body:has(input[name="executeurOfGemachtigde"][value="nee"]:checked) #gegevensExe
     justify-content: flex-start;
 }
 
-#clearSignature:hover {
+#clearSignature:hover, #verwijderVerkrijgerButton:hover {
     box-shadow: inset 0 -3rem 0 var(--ns-dark-red);
 }
 
-/* MARK: Gesloten Elementen */
+#clearSignature, #verwijderVerkrijgerButton{
+    width: 6em;
+    height: 3em;
+    border-radius: 4px;
+    border-style: none;
+    color: var(--white);
+    background-color: var(--ns-light-blue);
+    /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
+    box-shadow: inset 0 -.125rem 0 var(--ns-blue);
+    transition: 0.1s ease-out;
+}
+
+#verwijderVerkrijgerButton, #clearSignature {
+    margin-top: 1em;
+    width: fit-content;
+    background-color: var(--ns-red);
+    box-shadow: inset 0 -.125rem 0 var(--ns-dark-red);
+}
+
+footer button,
+#nieuweVerkrijgerButton,
+#printButton,
+input[type='submit']{
+    width: 6em;
+    height: 3em;
+    border-radius: 4px;
+    border-style: none;
+    color: var(--white);
+    transition: 0.1s ease-out;
+}
+
+#nieuweVerkrijgerButton {
+    display: flex;
+    padding: 1em;
+    margin-top: 0.4em;
+    width: fit-content;
+}
+
+footer button,
+#nieuweVerkrijgerButton{
+    background-color: var(--ns-dark-blue);
+    /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
+    box-shadow: inset 0 -.125rem 0 var(--ns-blue);
+}
+
+footer button:hover,
+#nieuweVerkrijgerButton:hover{
+    box-shadow: inset 0 -3rem 0 var(--ns-blue);
+    transition: 0.1s ease-in;
+}
+
+#printButton {
+    background-color: var(--ns-blue);
+    box-shadow: inset 0 -.125rem 0 var(--ns-dark-blue);
+    color: var(--text-color);
+    margin: 1em;
+}
+
+#printButton:hover {
+    box-shadow: inset 0 -3rem 0 var(--ns-dark-blue);
+}
+
+input[type="submit"] {
+    background-color: var(--ns-yellow);
+    box-shadow: inset 0 -.125rem 0 var(--ns-dark-yellow);
+    color: var(--ns-dark-blue);
+    grid-column: 2;
+    margin: 1em;
+    float: left;
+}
+
+input[type="submit"]:hover {
+    box-shadow: inset 0 -3rem 0 var(--ns-dark-yellow);
+}
+
+.endForm{
+    max-height: fit-content;
+    opacity: 1 !important;
+    position: relative;
+    grid-column: 2;
+}
+
+/* MARK: Verborgen Elementen */
 .activeJs fieldset:has(:indeterminate)>div:has(p),
 .activeJs fieldset:has(:indeterminate)>div:has(legend),
 label:has(input[class="nummerGemachtigde"]),
@@ -440,7 +522,6 @@ label:has(input[class="nummerGemachtigde"]),
     visibility: visible;
 }
 
-/* MARK: Verborgen Elementen */
 .hidden {
     display: none;
 }
@@ -562,56 +643,6 @@ footer {
     background-color: var(--ns-fieldset-background);
     border-top: 2px solid var(--ns-gray);
     margin-top: 1em;
-}
-
-footer button,
-input[type="submit"],
-#nieuweVerkrijgerButton,
-#verwijderVerkrijgerButton,
-#clearSignature {
-    width: 6em;
-    height: 3em;
-    border-radius: 4px;
-    border-style: none;
-    color: var(--white);
-    background-color: var(--ns-light-blue);
-    /* Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html */
-    box-shadow: inset 0 -.125rem 0 var(--ns-blue);
-    transition: 0.1s ease-out;
-}
-
-footer button:hover,
-input[type="submit"]:hover,
-#nieuweVerkrijgerButton:hover,
-#verwijderVerkrijgerButton:hover {
-    box-shadow: inset 0 -3rem 0 var(--ns-blue);
-    transition: 0.1s ease-in;
-}
-
-#verwijderVerkrijgerButton, #clearSignature {
-    margin-top: 1em;
-    width: fit-content;
-    background-color: var(--ns-red);
-    box-shadow: inset 0 -.125rem 0 var(--ns-dark-red);
-}
-
-#nieuweVerkrijgerButton {
-    display: flex;
-    width: auto;
-    padding: 1em;
-    margin-top: 0.4em;
-}
-
-input[type="submit"] {
-    background-color: var(--ns-yellow);
-    box-shadow: inset 0 -.125rem 0 var(--ns-dark-yellow);
-    color: var(--ns-dark-blue);
-    grid-column: 2;
-    margin: 1em;
-}
-
-input[type="submit"]:hover {
-    box-shadow: inset 0 -3rem 0 var(--ns-dark-yellow);
 }
 
 /* MARK: Media queries */
