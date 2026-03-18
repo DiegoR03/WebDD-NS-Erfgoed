@@ -221,8 +221,38 @@ Als laatste heb ik de derde pagina afgemaakt, maar op het einde van de derde pag
 <img width="1480" height="817" alt="image" src="https://github.com/user-attachments/assets/45140307-8d14-4b4e-bec4-2720862e1d58" /> <br>
 <img width="787" height="276" alt="image" src="https://github.com/user-attachments/assets/2d7fc704-84e6-4507-8cb2-3d1e8845ba8d" /> <br><br>
 
-Doel voor morgen:<br>
-Morgen wil ik nog kijken naar de laatste puntjes op de i. Ik wil morgen de helft van de dag focussen op Bt en de andere helft op CSS sinds ik daar nog wel wat andere taken voor heb. Morgen zal een dag zijn voor laatste verbeteren in het design en proberen zo ver mogelijk te komen in pagina's afmaken.
+## Week 4
+Deze week heb ik mijn project zo goed als af kunnen maken. Niet alleen heb ik een mooie form kunnen maken, maar de styling is nog heel erg accuraat naar de NS ook! Ik ben super blij met het resultaat dat ik nu heb opgezet. Ik heb een form met veel details en leuke extraa'tjes, maar het geweldige aan deze website is dat het ook werkt zelfs als de javascript het niet doen. Ik heb een fallback gemaakt voor als de laptop (voor wat voor reden dan ook) geen javascript ondersteunt! Tijdens deze korte periode heb ik zo veel geleerd over form element dat ik haast zou kunnen zeggen dat ik begon met dit project als een code beginner, en dat ik nu weg loop met een advanced level, zo een groot evrschil zit erin. Ik bene cht super blij met het resultaat dat ik op heb geleverd en zou het zo nog een keer willen doen! Het enige dat ik jammer vind is dat ik niet mere dat 3 pagina's heb kunnen uitwerken. Het liefst had ik er zo veel mogelijk gemaakt, maar dit is alles dat mogelijk was binnen 4 weken.
+<br>
+De volgende keer wil ik meer functies vanaf het begin maken. Deze keer heb ik alles tegelijkertijd gedaan, maar de volgende keer wil ik eerst heel veel functies klaarzetten en daarna alles mooi maken en klaarzetten.
+
+## Bronnenlijst
+// Links <br>
+- Flex shrink https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-shrink
+- Gemaakt met een box-shadow generator: https://cssgenerator.org/box-shadow-css-generator.html
+- Voor de drawing pad: https://medium.com/@divbydiv/build-a-signature-pad-in-html-css-js-canvas-bd174d999392
+- Tekenen zelf: https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
+- VOor .onbeforeunload: https://stackoverflow.com/questions/3664381/force-page-scroll-position-to-top-at-page-refresh-in-html
+- Max datepicker https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today
+
+// Prompts <br>
+- Vraag aan Gemini: rare vraag, maar ik wil window.print(); doen, maar dan zonder een specifieke ID, hoe kan ik het zo maken dat hij wel correct print zonder de "huidige" pagina te pakken
+- Antwoord: Gebruik @media print in CSS (De meest "CSS" manier). Dit is vaak de makkelijkste methode. Je gebruikt nog steeds de normale window.print(), maar je vertelt de browser via CSS dat hij alles moet verbergen behalve wat jij wilt zien op papier. Omdat je geen classes mag gebruiken, doen we dit op basis van tags: 
+<br><br>
+- Vraag: Ik heb geprobeert deze code toe te passen, maar sommige onderdelen zijn ontzichtbaar, wat gaat er fout? *Gedeelte van de code toegevoegd*.
+- Antwoord: Deze code ziet er heel goed uit, je bent er bijna! In CSS is de gouden regel: de meest specifieke selector wint. Omdat jij in je normale code al heel krachtige en specifieke selectors gebruikt (zoals .activeJs fieldset:has(:indeterminate) > div), is een simpele regel in @media print vaak niet "sterk" genoeg om die te overrulen. Daarom voegen wij !important toe om deze code te overschrijven.
+<br><br>
+- ChatGPT Prompt: Zou je mij kunnen helpen met een filter maken voor de inputs die niet te zien zijn (Door Opacity: 0;?) Ik krijg de filter niet voor elkaar.
+- Antwoord: Je hoeft de opacity niet mee te nemen in de filter! Alleen de pointer events van jouw CSS! Bijvoorbeeld:
+<br><br>
+- Vraag: De pagina herlaadt soms, hoe kan ik dit fixen + [code]
+- Antwoord: Voorkom dat de pagina herlaadt (als de knop in een form staat) met e.preventDefault(); Optioneel kan je ook onderaan de functie de required state herberekenen met de logica van een andere functie die je gebruikt: if (typeof syncRequiredFields === "function") {syncRequiredFields();}
+<br><br>
+- Vraagje aan gemini: Ik heb nu een canvas gemaakt voor mijn form om een handtekening te kunnen zetten, maar deze lijkt niet responsive (als ik al heb getekent, is dit te fixen?)
+- Antwoord: Kleine fix voor je JavaScript: Omdat het canvas nu responsive is via CSS (width: 100%), kan de tekenpositie soms verschuiven als je het venster groter of kleiner maakt. Gebruik deze verbeterde draw functie om dat op te vangen:
+<br><br>
+- ChatGPT: Van GetElementByID naar querySelectorAll.
+- Antwoord: Ik zie het probleem al! Op dit moment roep je de naam 'datePickerID' aan als element en niet als class, verander dit naar .datePickerID. Daarna moet je elke datePicker aanreoepen in de javascript met een forEach.
 
 
 
